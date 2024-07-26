@@ -83,13 +83,3 @@ class UsersLogoutView(CustomLoginRequiredMixin, LogoutView):
     def post(self, request, *args, **kwargs):
         info(request, _("Logout"))
         return super().post(request, *args, **kwargs)
-
-
-o = [
-    "Вы разлогинены",
-    "Пользователь успешно зарегистрирован",
-    "Вы залогинены",
-    "У вас нет прав для изменения другого пользователя.",
-    "Пользователь успешно изменен",
-    "Вы не авторизованы! Пожалуйста, выполните вход.",
-]
