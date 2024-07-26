@@ -4,7 +4,6 @@ from django.contrib.auth.forms import (
 )
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model, password_validation
-from django.forms.models import ModelForm
 from django import forms
 from django.utils.translation import gettext_lazy as _
 
@@ -13,12 +12,14 @@ class UsersRegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=150, required=True)
     last_name = forms.CharField(max_length=150, required=True)
 
-    class Meta(UserCreationForm):
+    class Meta:
         model = get_user_model()
         fields = [
             "username",
             "first_name",
             "last_name",
+            "password1",
+            "password2",
         ]
 
 
