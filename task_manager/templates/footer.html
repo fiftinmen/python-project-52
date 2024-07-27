@@ -12,7 +12,7 @@
                 </li>
             </ul>
         </div>
-        {% get_available_languages as LANGUAGES %}
+    {% comment %} {% get_available_languages as LANGUAGES %}
         {% get_language_info_list for LANGUAGES as languages %}
         {% if languages|length > 1 %}
         {% get_language_info for LANGUAGE_CODE as current_language%}
@@ -28,7 +28,7 @@
                         {% endfor %}
                     </div>
                 </div>
-            </div>
-        {% endif %}
+            </div> 
+        {% endif %}{% endcomment %}
     </div>
 </div>
