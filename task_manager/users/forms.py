@@ -10,7 +10,7 @@ from task_manager.mixins import NoColonsFormMixin
 from django.utils.translation import gettext_lazy as _
 
 
-class UsersRegisterForm(UserCreationForm, NoColonsFormMixin):
+class UsersRegisterForm(NoColonsFormMixin, UserCreationForm):
     first_name = forms.CharField(max_length=150, required=True)
     last_name = forms.CharField(max_length=150, required=True)
 
@@ -25,11 +25,11 @@ class UsersRegisterForm(UserCreationForm, NoColonsFormMixin):
         ]
 
 
-class UsersLoginForm(AuthenticationForm, NoColonsFormMixin):
+class UsersLoginForm(NoColonsFormMixin, AuthenticationForm):
     pass
 
 
-class UsersUpdateForm(UserChangeForm, NoColonsFormMixin):
+class UsersUpdateForm(NoColonsFormMixin, UserChangeForm):
     password = None
 
     class Meta:

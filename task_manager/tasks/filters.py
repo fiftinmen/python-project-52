@@ -2,9 +2,10 @@ import django_filters
 from django.forms import CheckboxInput, ChoiceField
 from django.utils.translation import gettext_lazy as _
 from .models import Task
+from task_manager.mixins import NoColonsFilterMixin
 
 
-class TasksFilter(django_filters.FilterSet):
+class TasksFilter(NoColonsFilterMixin, django_filters.FilterSet):
     labels = django_filters.ChoiceFilter(label=_("Label"))
     only_own_tasks = django_filters.BooleanFilter(
         label=_("Only own tasks"), widget=CheckboxInput, method="get_own_tasks"
