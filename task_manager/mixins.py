@@ -1,7 +1,3 @@
-from django.forms import ModelForm
-from django.views.generic.edit import ModelFormMixin
-
-
 class NoColonsFormMixin:
     def __init__(self, request=None, *args, **kwargs):
         super().__init__(request, *args, **kwargs)

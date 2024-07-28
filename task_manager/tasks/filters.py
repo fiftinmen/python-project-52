@@ -1,5 +1,5 @@
 import django_filters
-from django.forms import CheckboxInput, ChoiceField
+from django.forms import CheckboxInput
 from django.utils.translation import gettext_lazy as _
 from .models import Task
 from task_manager.mixins import NoColonsFilterMixin
