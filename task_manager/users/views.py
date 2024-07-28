@@ -42,11 +42,6 @@ class UsersLoginView(SuccessMessageMixin, LoginView):
             return redirect("index")
         return super().get(request, *args, **kwargs)
 
-    def dispatch(self, request, *args, **kwargs):
-        form = self.get_form()
-        print(form)
-        return super().dispatch(request, *args, **kwargs)
-
 
 class UsersCreateView(SuccessMessageMixin, CreateView):
     form_class = forms.UsersRegisterForm
