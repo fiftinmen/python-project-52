@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
-from django.contrib.messages import info, error, warning
+from django.contrib.messages import info, error
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.contrib.auth import get_user_model
@@ -31,16 +31,9 @@ class UsersDetailView(DetailView):
 
 class UsersLoginView(SuccessMessageMixin, LoginView):
     model = get_user_model()
-    form_class = forms.UsersLoginForm
     template_name = "users/login.html"
     next_page = success_url = reverse_lazy("index")
     success_message = _("Logged_in")
-
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            warning(request, _("Already_logged_in"))
-            return redirect("index")
-        return super().get(request, *args, **kwargs)
 
 
 class UsersCreateView(SuccessMessageMixin, CreateView):
@@ -48,12 +41,6 @@ class UsersCreateView(SuccessMessageMixin, CreateView):
     template_name = "users/create.html"
     next_page = success_url = reverse_lazy("index")
     success_message = _("Registration_success")
-
-    def dispatch(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            error(request, _("Not_enough_permissions"))
-            return redirect("index")
-        return super().dispatch(request, *args, **kwargs)
 
 
 class UsersUpdateView(

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-28 15:24+0300\n"
+"POT-Creation-Date: 2024-07-28 16:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\task_manager\labels\views.py:20
+#: .\task_manager\labels\models.py:8 .\task_manager\statuses\models.py:7
+#: .\task_manager\tasks\models.py:10
+#: .\task_manager\templates\labels\index.html:15
+#: .\task_manager\templates\statuses\index.html:15
+#: .\task_manager\templates\tasks\detail.html:24
+#: .\task_manager\templates\tasks\index.html:22
+msgid "Name"
+msgstr "Name"
+
+#: .\task_manager\labels\models.py:10 .\task_manager\statuses\models.py:9
+#: .\task_manager\tasks\models.py:16
+#: .\task_manager\templates\tasks\detail.html:32
+msgid "Created_at"
+msgstr "Created at"
+
+#: .\task_manager\labels\models.py:18 .\task_manager\tasks\filters.py:9
+msgid "Label"
+msgstr "Label"
+
+#: .\task_manager\labels\models.py:19 .\task_manager\labels\views.py:20
+#: .\task_manager\tasks\models.py:39
 #: .\task_manager\templates\navigation.html:25
 #: .\task_manager\templates\tasks\detail.html:36
 msgid "Labels"
@@ -44,7 +64,13 @@ msgstr "Can't delete status in use"
 msgid "Russian"
 msgstr "Russian"
 
-#: .\task_manager\statuses\views.py:19
+#: .\task_manager\statuses\models.py:17 .\task_manager\tasks\models.py:19
+#: .\task_manager\templates\tasks\detail.html:28
+#: .\task_manager\templates\tasks\index.html:23
+msgid "Status"
+msgstr "Status"
+
+#: .\task_manager\statuses\models.py:18 .\task_manager\statuses\views.py:19
 #: .\task_manager\templates\navigation.html:19
 msgid "Statuses"
 msgstr "Statuses"
@@ -61,27 +87,48 @@ msgstr "Status update success"
 msgid "Status_deletion_success"
 msgstr "Status deletion success"
 
-#: .\task_manager\tasks\filters.py:9
-msgid "Label"
-msgstr "Label"
-
 #: .\task_manager\tasks\filters.py:11
 msgid "Only own tasks"
 msgstr "Only own tasks"
 
-#: .\task_manager\tasks\views.py:30 .\task_manager\templates\navigation.html:22
+#: .\task_manager\tasks\models.py:13
+#, fuzzy
+#| msgid "SiteDescription"
+msgid "Description"
+msgstr "Simple task manager"
+
+#: .\task_manager\tasks\models.py:25
+#: .\task_manager\templates\tasks\detail.html:13
+#: .\task_manager\templates\tasks\index.html:24
+msgid "Author"
+msgstr "Author"
+
+#: .\task_manager\tasks\models.py:33
+#: .\task_manager\templates\tasks\detail.html:17
+#: .\task_manager\templates\tasks\index.html:25
+msgid "Executor"
+msgstr "Executor"
+
+#: .\task_manager\tasks\models.py:45
+#, fuzzy
+#| msgid "Tasks"
+msgid "Task"
+msgstr "Tasks"
+
+#: .\task_manager\tasks\models.py:46 .\task_manager\tasks\views.py:29
+#: .\task_manager\templates\navigation.html:22
 msgid "Tasks"
 msgstr "Tasks"
 
-#: .\task_manager\tasks\views.py:47
+#: .\task_manager\tasks\views.py:45
 msgid "Task_creation_success"
 msgstr "Task creation success"
 
-#: .\task_manager\tasks\views.py:64
+#: .\task_manager\tasks\views.py:61
 msgid "Task_update_success"
 msgstr "Task update success"
 
-#: .\task_manager\tasks\views.py:76
+#: .\task_manager\tasks\views.py:73
 msgid "Task_deletion_success"
 msgstr "Task deletion success"
 
@@ -95,11 +142,11 @@ msgstr "Task Manager"
 msgid "Greeting"
 msgstr "Hello!"
 
-#: .\task_manager\templates\labels\create.html:17
+#: .\task_manager\templates\labels\create.html:16
 #: .\task_manager\templates\labels\index.html:9
-#: .\task_manager\templates\statuses\create.html:17
+#: .\task_manager\templates\statuses\create.html:16
 #: .\task_manager\templates\statuses\index.html:9
-#: .\task_manager\templates\tasks\create.html:17
+#: .\task_manager\templates\tasks\create.html:16
 #: .\task_manager\templates\tasks\index.html:9
 msgid "Create"
 msgstr "Create"
@@ -116,7 +163,7 @@ msgstr "Confirm delete item"
 #: .\task_manager\templates\statuses\index.html:32
 #: .\task_manager\templates\tasks\delete.html:18
 #: .\task_manager\templates\tasks\detail.html:44
-#: .\task_manager\templates\tasks\index.html:66
+#: .\task_manager\templates\tasks\index.html:54
 #: .\task_manager\templates\users\delete.html:18
 #: .\task_manager\templates\users\index.html:33
 msgid "Delete"
@@ -124,39 +171,32 @@ msgstr "Delete"
 
 #: .\task_manager\templates\labels\index.html:14
 #: .\task_manager\templates\statuses\index.html:14
-#: .\task_manager\templates\tasks\index.html:33
+#: .\task_manager\templates\tasks\index.html:21
 msgid "ID"
 msgstr "ID"
 
-#: .\task_manager\templates\labels\index.html:15
-#: .\task_manager\templates\statuses\index.html:15
-#: .\task_manager\templates\tasks\detail.html:24
-#: .\task_manager\templates\tasks\index.html:34
-msgid "Name"
-msgstr "Name"
-
 #: .\task_manager\templates\labels\index.html:16
 #: .\task_manager\templates\statuses\index.html:16
-#: .\task_manager\templates\tasks\index.html:38
+#: .\task_manager\templates\tasks\index.html:26
 msgid "Date of creation"
 msgstr "Date of creation"
 
 #: .\task_manager\templates\labels\index.html:17
 #: .\task_manager\templates\statuses\index.html:17
-#: .\task_manager\templates\tasks\index.html:39
+#: .\task_manager\templates\tasks\index.html:27
 #: .\task_manager\templates\users\index.html:15
 msgid "Actions"
 msgstr "Actions"
 
 #: .\task_manager\templates\labels\index.html:31
-#: .\task_manager\templates\labels\update.html:18
+#: .\task_manager\templates\labels\update.html:17
 #: .\task_manager\templates\statuses\index.html:31
-#: .\task_manager\templates\statuses\update.html:18
+#: .\task_manager\templates\statuses\update.html:17
 #: .\task_manager\templates\tasks\detail.html:45
-#: .\task_manager\templates\tasks\index.html:65
-#: .\task_manager\templates\tasks\update.html:18
+#: .\task_manager\templates\tasks\index.html:53
+#: .\task_manager\templates\tasks\update.html:17
 #: .\task_manager\templates\users\index.html:32
-#: .\task_manager\templates\users\update.html:18
+#: .\task_manager\templates\users\update.html:17
 msgid "Update"
 msgstr "Update"
 
@@ -164,7 +204,8 @@ msgstr "Update"
 msgid "SiteDescription"
 msgstr "Simple task manager"
 
-#: .\task_manager\templates\navigation.html:15 .\task_manager\users\views.py:19
+#: .\task_manager\templates\navigation.html:15
+#: .\task_manager\users\models.py:33 .\task_manager\users\views.py:19
 msgid "Users"
 msgstr "Users"
 
@@ -185,7 +226,7 @@ msgstr ""
 msgid "Account"
 msgstr "Account"
 
-#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:85
+#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:84
 msgid "Logout"
 msgstr "Log out"
 
@@ -213,35 +254,16 @@ msgstr "Forward"
 msgid "Last"
 msgstr "Last"
 
-#: .\task_manager\templates\tasks\detail.html:13
-#: .\task_manager\templates\tasks\index.html:36
-msgid "Author"
-msgstr "Author"
-
-#: .\task_manager\templates\tasks\detail.html:17
-#: .\task_manager\templates\tasks\index.html:37
-msgid "Executor"
-msgstr "Executor"
-
 #: .\task_manager\templates\tasks\detail.html:20
-#: .\task_manager\templates\tasks\index.html:58
+#: .\task_manager\templates\tasks\index.html:46
 msgid "Not assigned"
 msgstr "Not assigned"
-
-#: .\task_manager\templates\tasks\detail.html:28
-#: .\task_manager\templates\tasks\index.html:35
-msgid "Status"
-msgstr "Status"
-
-#: .\task_manager\templates\tasks\detail.html:32
-msgid "Created_at"
-msgstr "Created at"
 
 #: .\task_manager\templates\tasks\detail.html:40
 msgid "Not specified"
 msgstr "Not specified"
 
-#: .\task_manager\templates\users\create.html:17
+#: .\task_manager\templates\users\create.html:16
 #, fuzzy
 #| msgid "Create"
 msgid "Create_user"
@@ -256,6 +278,7 @@ msgid "id"
 msgstr "ID"
 
 #: .\task_manager\templates\users\index.html:12
+#: .\task_manager\users\models.py:12
 #, fuzzy
 #| msgid "Users"
 msgid "Username"
@@ -295,29 +318,63 @@ msgstr "Not permitted"
 msgid "Not_permitted_to_modify_object"
 msgstr "Not permitted to modify object"
 
-#: .\task_manager\users\views.py:37
+#: .\task_manager\users\models.py:15
+msgid ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
+msgstr ""
+
+#: .\task_manager\users\models.py:19
+#, fuzzy
+#| msgid "First"
+msgid "First name"
+msgstr "First"
+
+#: .\task_manager\users\models.py:20
+#, fuzzy
+#| msgid "Last"
+msgid "Last name"
+msgstr "Last"
+
+#: .\task_manager\users\models.py:21
+#, fuzzy
+#| msgid "New password"
+msgid "Password"
+msgstr "New password"
+
+#: .\task_manager\users\models.py:23
+msgid "date joined"
+msgstr ""
+
+#: .\task_manager\users\models.py:32
+#, fuzzy
+#| msgid "Users"
+msgid "User"
+msgstr "Users"
+
+#: .\task_manager\users\views.py:36
 msgid "Logged_in"
 msgstr "Logged in"
 
-#: .\task_manager\users\views.py:41
+#: .\task_manager\users\views.py:40
 msgid "Already_logged_in"
 msgstr "Already logged in"
 
-#: .\task_manager\users\views.py:50
+#: .\task_manager\users\views.py:49
 #, fuzzy
 #| msgid "Registration"
 msgid "Registration_success"
 msgstr "Registration success"
 
-#: .\task_manager\users\views.py:54
+#: .\task_manager\users\views.py:53
 msgid "Not_enough_permissions"
 msgstr "Not enough permissions"
 
-#: .\task_manager\users\views.py:67
+#: .\task_manager\users\views.py:66
 msgid "User_update_success"
 msgstr "User update success"
 
-#: .\task_manager\users\views.py:77
+#: .\task_manager\users\views.py:76
 msgid "User_deletion_success"
 msgstr "User deletion success"
 

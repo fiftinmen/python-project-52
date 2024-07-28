@@ -11,8 +11,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UsersRegisterForm(UserCreationForm):
-    first_name = forms.CharField(max_length=150, required=True)
-    last_name = forms.CharField(max_length=150, required=True)
 
     class Meta:
         model = get_user_model()
@@ -23,10 +21,6 @@ class UsersRegisterForm(UserCreationForm):
             "password1",
             "password2",
         ]
-
-
-class UsersLoginForm(NoColonsFormMixin, AuthenticationForm):
-    pass
 
 
 class UsersUpdateForm(NoColonsFormMixin, UserChangeForm):

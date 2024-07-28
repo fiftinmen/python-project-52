@@ -9,13 +9,11 @@
     <form action="{% url "statuses_create" %}" method="post">
         {% csrf_token %}
         <div class="mb-3 row">
-            {{ form.as_p }}
+            {% bootstrap_form form %}
         </div>
         <div class="mb-3 row">
-            <div class="offset-sm-4 col-sm-8">
-                <button type="submit" class="btn btn-primary">
-                    {% trans "Create" %}
-                </button>
+            <div class="col-sm-8">
+                <button type="submit" class="btn btn-primary">{% trans "Create" %}</button>
             </div>
         </div>
     </form>

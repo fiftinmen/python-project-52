@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-28 15:24+0300\n"
+"POT-Creation-Date: 2024-07-28 16:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,27 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\task_manager\labels\views.py:20
+#: .\task_manager\labels\models.py:8 .\task_manager\statuses\models.py:7
+#: .\task_manager\tasks\models.py:10
+#: .\task_manager\templates\labels\index.html:15
+#: .\task_manager\templates\statuses\index.html:15
+#: .\task_manager\templates\tasks\detail.html:24
+#: .\task_manager\templates\tasks\index.html:22
+msgid "Name"
+msgstr "Имя"
+
+#: .\task_manager\labels\models.py:10 .\task_manager\statuses\models.py:9
+#: .\task_manager\tasks\models.py:16
+#: .\task_manager\templates\tasks\detail.html:32
+msgid "Created_at"
+msgstr "Создан"
+
+#: .\task_manager\labels\models.py:18 .\task_manager\tasks\filters.py:9
+msgid "Label"
+msgstr "Метка"
+
+#: .\task_manager\labels\models.py:19 .\task_manager\labels\views.py:20
+#: .\task_manager\tasks\models.py:39
 #: .\task_manager\templates\navigation.html:25
 #: .\task_manager\templates\tasks\detail.html:36
 msgid "Labels"
@@ -46,7 +66,13 @@ msgstr "Невозможно удалить используемый стату�
 msgid "Russian"
 msgstr "Русский"
 
-#: .\task_manager\statuses\views.py:19
+#: .\task_manager\statuses\models.py:17 .\task_manager\tasks\models.py:19
+#: .\task_manager\templates\tasks\detail.html:28
+#: .\task_manager\templates\tasks\index.html:23
+msgid "Status"
+msgstr "Статус"
+
+#: .\task_manager\statuses\models.py:18 .\task_manager\statuses\views.py:19
 #: .\task_manager\templates\navigation.html:19
 msgid "Statuses"
 msgstr "Статусы"
@@ -63,27 +89,44 @@ msgstr "Статус успешно обновлен"
 msgid "Status_deletion_success"
 msgstr "Статус успешно удален"
 
-#: .\task_manager\tasks\filters.py:9
-msgid "Label"
-msgstr "Метка"
-
 #: .\task_manager\tasks\filters.py:11
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
-#: .\task_manager\tasks\views.py:30 .\task_manager\templates\navigation.html:22
+#: .\task_manager\tasks\models.py:13
+msgid "Description"
+msgstr "Описание"
+
+#: .\task_manager\tasks\models.py:25
+#: .\task_manager\templates\tasks\detail.html:13
+#: .\task_manager\templates\tasks\index.html:24
+msgid "Author"
+msgstr "Автор"
+
+#: .\task_manager\tasks\models.py:33
+#: .\task_manager\templates\tasks\detail.html:17
+#: .\task_manager\templates\tasks\index.html:25
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: .\task_manager\tasks\models.py:45
+msgid "Task"
+msgstr "Задача"
+
+#: .\task_manager\tasks\models.py:46 .\task_manager\tasks\views.py:29
+#: .\task_manager\templates\navigation.html:22
 msgid "Tasks"
 msgstr "Задачи"
 
-#: .\task_manager\tasks\views.py:47
+#: .\task_manager\tasks\views.py:45
 msgid "Task_creation_success"
 msgstr "Задача успешно создана"
 
-#: .\task_manager\tasks\views.py:64
+#: .\task_manager\tasks\views.py:61
 msgid "Task_update_success"
 msgstr "Задача успешно обновлена"
 
-#: .\task_manager\tasks\views.py:76
+#: .\task_manager\tasks\views.py:73
 msgid "Task_deletion_success"
 msgstr "Задача успешно удалена"
 
@@ -97,11 +140,11 @@ msgstr "Менеджер задач"
 msgid "Greeting"
 msgstr "Привет!"
 
-#: .\task_manager\templates\labels\create.html:17
+#: .\task_manager\templates\labels\create.html:16
 #: .\task_manager\templates\labels\index.html:9
-#: .\task_manager\templates\statuses\create.html:17
+#: .\task_manager\templates\statuses\create.html:16
 #: .\task_manager\templates\statuses\index.html:9
-#: .\task_manager\templates\tasks\create.html:17
+#: .\task_manager\templates\tasks\create.html:16
 #: .\task_manager\templates\tasks\index.html:9
 msgid "Create"
 msgstr "Создать"
@@ -118,7 +161,7 @@ msgstr "Подтвердите удаление"
 #: .\task_manager\templates\statuses\index.html:32
 #: .\task_manager\templates\tasks\delete.html:18
 #: .\task_manager\templates\tasks\detail.html:44
-#: .\task_manager\templates\tasks\index.html:66
+#: .\task_manager\templates\tasks\index.html:54
 #: .\task_manager\templates\users\delete.html:18
 #: .\task_manager\templates\users\index.html:33
 msgid "Delete"
@@ -126,39 +169,32 @@ msgstr "Удалить"
 
 #: .\task_manager\templates\labels\index.html:14
 #: .\task_manager\templates\statuses\index.html:14
-#: .\task_manager\templates\tasks\index.html:33
+#: .\task_manager\templates\tasks\index.html:21
 msgid "ID"
 msgstr "ID"
 
-#: .\task_manager\templates\labels\index.html:15
-#: .\task_manager\templates\statuses\index.html:15
-#: .\task_manager\templates\tasks\detail.html:24
-#: .\task_manager\templates\tasks\index.html:34
-msgid "Name"
-msgstr "Имя"
-
 #: .\task_manager\templates\labels\index.html:16
 #: .\task_manager\templates\statuses\index.html:16
-#: .\task_manager\templates\tasks\index.html:38
+#: .\task_manager\templates\tasks\index.html:26
 msgid "Date of creation"
 msgstr "Дата создания"
 
 #: .\task_manager\templates\labels\index.html:17
 #: .\task_manager\templates\statuses\index.html:17
-#: .\task_manager\templates\tasks\index.html:39
+#: .\task_manager\templates\tasks\index.html:27
 #: .\task_manager\templates\users\index.html:15
 msgid "Actions"
 msgstr "Действия"
 
 #: .\task_manager\templates\labels\index.html:31
-#: .\task_manager\templates\labels\update.html:18
+#: .\task_manager\templates\labels\update.html:17
 #: .\task_manager\templates\statuses\index.html:31
-#: .\task_manager\templates\statuses\update.html:18
+#: .\task_manager\templates\statuses\update.html:17
 #: .\task_manager\templates\tasks\detail.html:45
-#: .\task_manager\templates\tasks\index.html:65
-#: .\task_manager\templates\tasks\update.html:18
+#: .\task_manager\templates\tasks\index.html:53
+#: .\task_manager\templates\tasks\update.html:17
 #: .\task_manager\templates\users\index.html:32
-#: .\task_manager\templates\users\update.html:18
+#: .\task_manager\templates\users\update.html:17
 msgid "Update"
 msgstr "Обновить"
 
@@ -166,7 +202,8 @@ msgstr "Обновить"
 msgid "SiteDescription"
 msgstr "Простой менеджер задач"
 
-#: .\task_manager\templates\navigation.html:15 .\task_manager\users\views.py:19
+#: .\task_manager\templates\navigation.html:15
+#: .\task_manager\users\models.py:33 .\task_manager\users\views.py:19
 msgid "Users"
 msgstr "Пользователи"
 
@@ -187,7 +224,7 @@ msgstr "Привет, %(username)s"
 msgid "Account"
 msgstr "Аккаунт"
 
-#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:85
+#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:84
 msgid "Logout"
 msgstr "Выход"
 
@@ -215,35 +252,16 @@ msgstr "Вперед"
 msgid "Last"
 msgstr "Последняя"
 
-#: .\task_manager\templates\tasks\detail.html:13
-#: .\task_manager\templates\tasks\index.html:36
-msgid "Author"
-msgstr "Автор"
-
-#: .\task_manager\templates\tasks\detail.html:17
-#: .\task_manager\templates\tasks\index.html:37
-msgid "Executor"
-msgstr "Исполнитель"
-
 #: .\task_manager\templates\tasks\detail.html:20
-#: .\task_manager\templates\tasks\index.html:58
+#: .\task_manager\templates\tasks\index.html:46
 msgid "Not assigned"
 msgstr "Не назначен"
-
-#: .\task_manager\templates\tasks\detail.html:28
-#: .\task_manager\templates\tasks\index.html:35
-msgid "Status"
-msgstr "Статус"
-
-#: .\task_manager\templates\tasks\detail.html:32
-msgid "Created_at"
-msgstr "Создан"
 
 #: .\task_manager\templates\tasks\detail.html:40
 msgid "Not specified"
 msgstr "Не указано"
 
-#: .\task_manager\templates\users\create.html:17
+#: .\task_manager\templates\users\create.html:16
 msgid "Create_user"
 msgstr "Зарегистрировать"
 
@@ -256,8 +274,7 @@ msgid "id"
 msgstr "ID"
 
 #: .\task_manager\templates\users\index.html:12
-#, fuzzy
-#| msgid "Users"
+#: .\task_manager\users\models.py:12
 msgid "Username"
 msgstr "Имя пользователя"
 
@@ -266,8 +283,6 @@ msgid "Fullname"
 msgstr "Полное имя"
 
 #: .\task_manager\templates\users\index.html:14
-#, fuzzy
-#| msgid "Registration"
 msgid "Date of registration"
 msgstr "Дата регистрации"
 
@@ -295,29 +310,55 @@ msgstr "Не разрешено"
 msgid "Not_permitted_to_modify_object"
 msgstr "Не разрешено изменять объект"
 
-#: .\task_manager\users\views.py:37
+#: .\task_manager\users\models.py:15
+msgid ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
+msgstr ""
+"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
+
+#: .\task_manager\users\models.py:19
+msgid "First name"
+msgstr "Имя"
+
+#: .\task_manager\users\models.py:20
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\task_manager\users\models.py:21
+msgid "Password"
+msgstr "Пароль"
+
+#: .\task_manager\users\models.py:23
+msgid "date joined"
+msgstr "Дата регистрации"
+
+#: .\task_manager\users\models.py:32
+msgid "User"
+msgstr "Пользователь"
+
+#: .\task_manager\users\views.py:36
 msgid "Logged_in"
 msgstr "Вход выполнен"
 
-#: .\task_manager\users\views.py:41
+#: .\task_manager\users\views.py:40
 msgid "Already_logged_in"
 msgstr "Вы уже вошли в систему"
 
-#: .\task_manager\users\views.py:50
-#, fuzzy
-#| msgid "Registration"
+#: .\task_manager\users\views.py:49
 msgid "Registration_success"
-msgstr "Регистрация успешна"
+msgstr "Регистрация прошла успешно"
 
-#: .\task_manager\users\views.py:54
+#: .\task_manager\users\views.py:53
 msgid "Not_enough_permissions"
 msgstr "Недостаточно прав"
 
-#: .\task_manager\users\views.py:67
+#: .\task_manager\users\views.py:66
 msgid "User_update_success"
 msgstr "Пользователь успешно обновлен"
 
-#: .\task_manager\users\views.py:77
+#: .\task_manager\users\views.py:76
 msgid "User_deletion_success"
 msgstr "Пользователь успешно удален"
 

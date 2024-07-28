@@ -9,7 +9,6 @@ from .filters import TasksFilter
 from .models import Task
 from .mixins import TasksModifyPermissionMixin
 from django_filters.views import FilterView
-from task_manager.mixins import NoColonsModelFormMixin
 
 # Create your views here.
 
@@ -38,7 +37,6 @@ class TasksDetailView(CustomLoginRequiredMixin, DetailView):
 class TasksCreateView(
     CustomLoginRequiredMixin,
     SuccessMessageMixin,
-    NoColonsModelFormMixin,
     CreateView,
 ):
     model = Task
@@ -55,7 +53,6 @@ class TasksCreateView(
 class TasksUpdateView(
     CustomLoginRequiredMixin,
     SuccessMessageMixin,
-    NoColonsModelFormMixin,
     UpdateView,
 ):
     model = Task
