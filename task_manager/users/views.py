@@ -31,6 +31,7 @@ class UsersDetailView(DetailView):
 
 class UsersLoginView(SuccessMessageMixin, LoginView):
     model = get_user_model()
+    form_class = forms.UsersLoginForm
     template_name = "users/login.html"
     next_page = success_url = reverse_lazy("index")
     success_message = _("Logged_in")

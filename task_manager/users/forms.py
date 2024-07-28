@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import (
     UserCreationForm,
     UserChangeForm,
+    AuthenticationForm,
 )
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model, password_validation
@@ -21,6 +22,12 @@ class UsersRegisterForm(UserCreationForm):
             "password1",
             "password2",
         ]
+
+
+class UsersLoginForm(AuthenticationForm):
+    def __init__(self, request=None, *args, **kwargs):
+        super().__init__(request, *args, **kwargs)
+        self.label_suffix = ""
 
 
 class UsersUpdateForm(UserChangeForm):

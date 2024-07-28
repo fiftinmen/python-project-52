@@ -9,7 +9,7 @@
     <form action="{% url "users_login" %}" method="post">
         {% csrf_token %}
         <div class="mb-3 row">
-            {{ form }}
+            {{ form.as_p }}
         </div>
         <div class="mb-3 row">
             <div class="offset-sm-4 col-sm-8">
