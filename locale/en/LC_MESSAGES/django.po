@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-23 18:48+0300\n"
+"POT-Creation-Date: 2024-07-28 12:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\task_manager\labels\views.py:20
-#: .\task_manager\templates\navigation.html:26
+#: .\task_manager\templates\navigation.html:25
 #: .\task_manager\templates\tasks\detail.html:36
 msgid "Labels"
 msgstr "Labels"
@@ -40,16 +40,12 @@ msgstr "Label deletion success"
 msgid "Can't_delete_status_in_use"
 msgstr "Can't delete status in use"
 
-#: .\task_manager\settings.py:158
+#: .\task_manager\settings.py:173
 msgid "Russian"
 msgstr "Russian"
 
-#: .\task_manager\settings.py:159
-msgid "English"
-msgstr "English"
-
 #: .\task_manager\statuses\views.py:19
-#: .\task_manager\templates\navigation.html:20
+#: .\task_manager\templates\navigation.html:19
 msgid "Statuses"
 msgstr "Statuses"
 
@@ -73,7 +69,7 @@ msgstr "Label"
 msgid "Only own tasks"
 msgstr "Only own tasks"
 
-#: .\task_manager\tasks\views.py:29 .\task_manager\templates\navigation.html:23
+#: .\task_manager\tasks\views.py:29 .\task_manager\templates\navigation.html:22
 msgid "Tasks"
 msgstr "Tasks"
 
@@ -91,7 +87,7 @@ msgstr "Task deletion success"
 
 #: .\task_manager\templates\footer.html:11
 #: .\task_manager\templates\layout.html:11
-#: .\task_manager\templates\navigation.html:13
+#: .\task_manager\templates\navigation.html:12
 msgid "SiteTitle"
 msgstr "Task Manager"
 
@@ -168,28 +164,28 @@ msgstr "Update"
 msgid "SiteDescription"
 msgstr "Simple task manager"
 
-#: .\task_manager\templates\navigation.html:16 .\task_manager\users\views.py:19
+#: .\task_manager\templates\navigation.html:15 .\task_manager\users\views.py:19
 msgid "Users"
 msgstr "Users"
 
-#: .\task_manager\templates\navigation.html:31
+#: .\task_manager\templates\navigation.html:30
 msgid "Login"
 msgstr "Sign in"
 
-#: .\task_manager\templates\navigation.html:34
+#: .\task_manager\templates\navigation.html:33
 msgid "Registration"
 msgstr "Sign Up"
 
-#: .\task_manager\templates\navigation.html:44
+#: .\task_manager\templates\navigation.html:43
 #, python-format
 msgid "Hello, %(username)s"
 msgstr ""
 
-#: .\task_manager\templates\navigation.html:46
+#: .\task_manager\templates\navigation.html:45
 msgid "Account"
 msgstr "Account"
 
-#: .\task_manager\templates\navigation.html:51 .\task_manager\users\views.py:84
+#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:85
 msgid "Logout"
 msgstr "Log out"
 
@@ -276,18 +272,18 @@ msgid "Date of registration"
 msgstr "Date of registration"
 
 #: .\task_manager\templates\users\login.html:17
-msgid "Submit"
-msgstr "Submit"
+msgid "Enter"
+msgstr ""
 
-#: .\task_manager\users\forms.py:37
+#: .\task_manager\users\forms.py:44
 msgid "The two password fields didn’t match."
 msgstr "The two password fields didn’t match."
 
-#: .\task_manager\users\forms.py:40
+#: .\task_manager\users\forms.py:47
 msgid "New password"
 msgstr "New password"
 
-#: .\task_manager\users\forms.py:46
+#: .\task_manager\users\forms.py:53
 msgid "New password confirmation"
 msgstr "New password confirmation"
 
@@ -299,28 +295,34 @@ msgstr "Not permitted"
 msgid "Not_permitted_to_modify_object"
 msgstr "Not permitted to modify object"
 
-#: .\task_manager\users\views.py:36
+#: .\task_manager\users\views.py:37
 msgid "Logged_in"
 msgstr "Logged in"
 
-#: .\task_manager\users\views.py:40
+#: .\task_manager\users\views.py:41
 msgid "Already_logged_in"
 msgstr "Already logged in"
 
-#: .\task_manager\users\views.py:49
+#: .\task_manager\users\views.py:50
 #, fuzzy
 #| msgid "Registration"
 msgid "Registration_success"
 msgstr "Registration success"
 
-#: .\task_manager\users\views.py:53
+#: .\task_manager\users\views.py:54
 msgid "Not_enough_permissions"
 msgstr "Not enough permissions"
 
-#: .\task_manager\users\views.py:66
+#: .\task_manager\users\views.py:67
 msgid "User_update_success"
 msgstr "User update success"
 
-#: .\task_manager\users\views.py:76
+#: .\task_manager\users\views.py:77
 msgid "User_deletion_success"
 msgstr "User deletion success"
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "Submit"
+#~ msgstr "Submit"

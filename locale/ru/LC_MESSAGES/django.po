@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-23 18:48+0300\n"
+"POT-Creation-Date: 2024-07-28 12:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: .\task_manager\labels\views.py:20
-#: .\task_manager\templates\navigation.html:26
+#: .\task_manager\templates\navigation.html:25
 #: .\task_manager\templates\tasks\detail.html:36
 msgid "Labels"
 msgstr "Метки"
@@ -42,16 +42,12 @@ msgstr "Метка успешно удалена"
 msgid "Can't_delete_status_in_use"
 msgstr "Невозможно удалить используемый статус"
 
-#: .\task_manager\settings.py:158
+#: .\task_manager\settings.py:173
 msgid "Russian"
 msgstr "Русский"
 
-#: .\task_manager\settings.py:159
-msgid "English"
-msgstr "Английский"
-
 #: .\task_manager\statuses\views.py:19
-#: .\task_manager\templates\navigation.html:20
+#: .\task_manager\templates\navigation.html:19
 msgid "Statuses"
 msgstr "Статусы"
 
@@ -75,7 +71,7 @@ msgstr "Метка"
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
-#: .\task_manager\tasks\views.py:29 .\task_manager\templates\navigation.html:23
+#: .\task_manager\tasks\views.py:29 .\task_manager\templates\navigation.html:22
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -93,7 +89,7 @@ msgstr "Задача успешно удалена"
 
 #: .\task_manager\templates\footer.html:11
 #: .\task_manager\templates\layout.html:11
-#: .\task_manager\templates\navigation.html:13
+#: .\task_manager\templates\navigation.html:12
 msgid "SiteTitle"
 msgstr "Менеджер задач"
 
@@ -170,28 +166,28 @@ msgstr "Обновить"
 msgid "SiteDescription"
 msgstr "Простой менеджер задач"
 
-#: .\task_manager\templates\navigation.html:16 .\task_manager\users\views.py:19
+#: .\task_manager\templates\navigation.html:15 .\task_manager\users\views.py:19
 msgid "Users"
 msgstr "Пользователи"
 
-#: .\task_manager\templates\navigation.html:31
+#: .\task_manager\templates\navigation.html:30
 msgid "Login"
 msgstr "Вход"
 
-#: .\task_manager\templates\navigation.html:34
+#: .\task_manager\templates\navigation.html:33
 msgid "Registration"
 msgstr "Регистрация"
 
-#: .\task_manager\templates\navigation.html:44
+#: .\task_manager\templates\navigation.html:43
 #, python-format
 msgid "Hello, %(username)s"
 msgstr "Привет, %(username)s"
 
-#: .\task_manager\templates\navigation.html:46
+#: .\task_manager\templates\navigation.html:45
 msgid "Account"
 msgstr "Аккаунт"
 
-#: .\task_manager\templates\navigation.html:51 .\task_manager\users\views.py:84
+#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:85
 msgid "Logout"
 msgstr "Выход"
 
@@ -278,18 +274,18 @@ msgid "Date of registration"
 msgstr "Дата регистрации"
 
 #: .\task_manager\templates\users\login.html:17
-msgid "Submit"
-msgstr "Отправить"
+msgid "Enter"
+msgstr "Войти"
 
-#: .\task_manager\users\forms.py:37
+#: .\task_manager\users\forms.py:44
 msgid "The two password fields didn’t match."
 msgstr "Пароли не совпадают"
 
-#: .\task_manager\users\forms.py:40
+#: .\task_manager\users\forms.py:47
 msgid "New password"
 msgstr "Новый пароль"
 
-#: .\task_manager\users\forms.py:46
+#: .\task_manager\users\forms.py:53
 msgid "New password confirmation"
 msgstr "Подтверждение нового пароля"
 
@@ -301,28 +297,34 @@ msgstr "Не разрешено"
 msgid "Not_permitted_to_modify_object"
 msgstr "Не разрешено изменять объект"
 
-#: .\task_manager\users\views.py:36
+#: .\task_manager\users\views.py:37
 msgid "Logged_in"
 msgstr "Вход выполнен"
 
-#: .\task_manager\users\views.py:40
+#: .\task_manager\users\views.py:41
 msgid "Already_logged_in"
 msgstr "Вы уже вошли в систему"
 
-#: .\task_manager\users\views.py:49
+#: .\task_manager\users\views.py:50
 #, fuzzy
 #| msgid "Registration"
 msgid "Registration_success"
 msgstr "Регистрация успешна"
 
-#: .\task_manager\users\views.py:53
+#: .\task_manager\users\views.py:54
 msgid "Not_enough_permissions"
 msgstr "Недостаточно прав"
 
-#: .\task_manager\users\views.py:66
+#: .\task_manager\users\views.py:67
 msgid "User_update_success"
 msgstr "Пользователь успешно обновлен"
 
-#: .\task_manager\users\views.py:76
+#: .\task_manager\users\views.py:77
 msgid "User_deletion_success"
 msgstr "Пользователь успешно удален"
+
+#~ msgid "English"
+#~ msgstr "Английский"
+
+#~ msgid "Submit"
+#~ msgstr "Отправить"
