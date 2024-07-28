@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-28 12:24+0300\n"
+"POT-Creation-Date: 2024-07-28 15:24+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,27 +61,27 @@ msgstr "Status update success"
 msgid "Status_deletion_success"
 msgstr "Status deletion success"
 
-#: .\task_manager\tasks\filters.py:8
+#: .\task_manager\tasks\filters.py:9
 msgid "Label"
 msgstr "Label"
 
-#: .\task_manager\tasks\filters.py:10
+#: .\task_manager\tasks\filters.py:11
 msgid "Only own tasks"
 msgstr "Only own tasks"
 
-#: .\task_manager\tasks\views.py:29 .\task_manager\templates\navigation.html:22
+#: .\task_manager\tasks\views.py:30 .\task_manager\templates\navigation.html:22
 msgid "Tasks"
 msgstr "Tasks"
 
-#: .\task_manager\tasks\views.py:43
+#: .\task_manager\tasks\views.py:47
 msgid "Task_creation_success"
 msgstr "Task creation success"
 
-#: .\task_manager\tasks\views.py:57
+#: .\task_manager\tasks\views.py:64
 msgid "Task_update_success"
 msgstr "Task update success"
 
-#: .\task_manager\tasks\views.py:69
+#: .\task_manager\tasks\views.py:76
 msgid "Task_deletion_success"
 msgstr "Task deletion success"
 
@@ -243,9 +243,9 @@ msgstr "Not specified"
 
 #: .\task_manager\templates\users\create.html:17
 #, fuzzy
-#| msgid "Registration"
-msgid "Register"
-msgstr "Sign Up"
+#| msgid "Create"
+msgid "Create_user"
+msgstr "Create"
 
 #: .\task_manager\templates\users\delete.html:13
 msgid "Confirm_delete"
@@ -320,6 +320,11 @@ msgstr "User update success"
 #: .\task_manager\users\views.py:77
 msgid "User_deletion_success"
 msgstr "User deletion success"
+
+#, fuzzy
+#~| msgid "Registration"
+#~ msgid "Register"
+#~ msgstr "Sign Up"
 
 #~ msgid "English"
 #~ msgstr "English"

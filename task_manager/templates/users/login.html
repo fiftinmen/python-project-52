@@ -4,15 +4,16 @@
 {% load static %}
 {% get_current_language as LANGUAGE_CODE %}
 
+
 {% block content %}
 <div class="container">
     <form action="{% url "users_login" %}" method="post">
         {% csrf_token %}
         <div class="mb-3 row">
-              <div class="mb-3"><label class="form-label" for="id_username">Имя пользователя</label><input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" class="form-control" placeholder="Имя пользователя" required id="id_username"></div><div class="mb-3"><label class="form-label" for="id_password">Пароль</label><input type="password" name="password" autocomplete="current-password" class="form-control" placeholder="Пароль" required id="id_password"></div>
+            {% bootstrap_form form %}
         </div>
         <div class="mb-3 row">
-            <div class="offset-sm-4 col-sm-8">
+            <div class="col-sm-8">
             <input class="btn btn-primary" type="submit" value="{% trans "Enter" %}">
             </div>
         </div>
