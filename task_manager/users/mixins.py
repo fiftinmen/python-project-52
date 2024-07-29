@@ -32,7 +32,7 @@ class CustomLoginRequiredMixin(CustomUserTestMixin):
 
     def __init__(self):
         super().__init__()
-        perm = "login_required"
+        perm = _("login_required")
         self.permission_required = [perm]
         self.permission_test[perm] = self.is_user_authenticated
         self.permission_denied_action[perm] = self.redirect_to_login

@@ -34,7 +34,7 @@ load_dotenv()
 SECRET_KEY = os.environ["SECRET_KEY"]
 DATABASE_URL = os.environ.get("DATABASE_URL")
 ROLLBAR_TOKEN = os.environ.get("ROLLBAR_TOKEN")
-DEBUG = DATABASE_URL is None
+DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-28 16:26+0300\n"
+"POT-Creation-Date: 2024-07-29 21:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgstr "Метка успешно создана"
 
 #: .\task_manager\labels\views.py:48
 msgid "Label_update_success"
-msgstr "Метка успешно обновлена"
+msgstr "Метка успешно изменена"
 
 #: .\task_manager\labels\views.py:60
 msgid "Label_deletion_success"
@@ -60,7 +60,7 @@ msgstr "Метка успешно удалена"
 
 #: .\task_manager\labels\views.py:64 .\task_manager\statuses\views.py:52
 msgid "Can't_delete_status_in_use"
-msgstr "Невозможно удалить используемый статус"
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: .\task_manager\settings.py:173
 msgid "Russian"
@@ -83,7 +83,7 @@ msgstr "Статус успешно создан"
 
 #: .\task_manager\statuses\views.py:38
 msgid "Status_update_success"
-msgstr "Статус успешно обновлен"
+msgstr "Статус успешно изменен"
 
 #: .\task_manager\statuses\views.py:48
 msgid "Status_deletion_success"
@@ -153,7 +153,7 @@ msgstr "Создать"
 #: .\task_manager\templates\statuses\delete.html:13
 #: .\task_manager\templates\tasks\delete.html:13
 msgid "Confirm_delete_item"
-msgstr "Подтвердите удаление"
+msgstr "Вы уверены, что хотите удалить"
 
 #: .\task_manager\templates\labels\delete.html:18
 #: .\task_manager\templates\labels\index.html:32
@@ -165,7 +165,7 @@ msgstr "Подтвердите удаление"
 #: .\task_manager\templates\users\delete.html:18
 #: .\task_manager\templates\users\index.html:33
 msgid "Delete"
-msgstr "Удалить"
+msgstr "Да, удалить"
 
 #: .\task_manager\templates\labels\index.html:14
 #: .\task_manager\templates\statuses\index.html:14
@@ -196,7 +196,7 @@ msgstr "Действия"
 #: .\task_manager\templates\users\index.html:32
 #: .\task_manager\templates\users\update.html:17
 msgid "Update"
-msgstr "Обновить"
+msgstr "Изменить"
 
 #: .\task_manager\templates\layout.html:13
 msgid "SiteDescription"
@@ -224,7 +224,7 @@ msgstr "Привет, %(username)s"
 msgid "Account"
 msgstr "Аккаунт"
 
-#: .\task_manager\templates\navigation.html:50 .\task_manager\users\views.py:84
+#: .\task_manager\templates\navigation.html:50
 msgid "Logout"
 msgstr "Выход"
 
@@ -267,7 +267,7 @@ msgstr "Зарегистрировать"
 
 #: .\task_manager\templates\users\delete.html:13
 msgid "Confirm_delete"
-msgstr "Подтвердите удаление"
+msgstr "Вы уверены, что хотите удалить"
 
 #: .\task_manager\templates\users\index.html:11
 msgid "id"
@@ -290,21 +290,25 @@ msgstr "Дата регистрации"
 msgid "Enter"
 msgstr "Войти"
 
-#: .\task_manager\users\forms.py:44
+#: .\task_manager\users\forms.py:36
 msgid "The two password fields didn’t match."
 msgstr "Пароли не совпадают"
 
-#: .\task_manager\users\forms.py:47
+#: .\task_manager\users\forms.py:39
 msgid "New password"
 msgstr "Новый пароль"
 
-#: .\task_manager\users\forms.py:53
+#: .\task_manager\users\forms.py:45
 msgid "New password confirmation"
 msgstr "Подтверждение нового пароля"
 
 #: .\task_manager\users\mixins.py:26
 msgid "not_permitted"
 msgstr "Не разрешено"
+
+#: .\task_manager\users\mixins.py:35
+msgid "login_required"
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
 #: .\task_manager\users\mixins.py:65
 msgid "Not_permitted_to_modify_object"
@@ -340,27 +344,29 @@ msgstr "Пользователь"
 
 #: .\task_manager\users\views.py:36
 msgid "Logged_in"
-msgstr "Вход выполнен"
+msgstr "Вы залогинены"
 
-#: .\task_manager\users\views.py:40
-msgid "Already_logged_in"
-msgstr "Вы уже вошли в систему"
-
-#: .\task_manager\users\views.py:49
+#: .\task_manager\users\views.py:43
 msgid "Registration_success"
-msgstr "Регистрация прошла успешно"
+msgstr "Пользователь успешно зарегистрирован"
 
-#: .\task_manager\users\views.py:53
-msgid "Not_enough_permissions"
-msgstr "Недостаточно прав"
-
-#: .\task_manager\users\views.py:66
+#: .\task_manager\users\views.py:54
 msgid "User_update_success"
-msgstr "Пользователь успешно обновлен"
+msgstr "Пользователь успешно изменен"
 
-#: .\task_manager\users\views.py:76
+#: .\task_manager\users\views.py:64
 msgid "User_deletion_success"
 msgstr "Пользователь успешно удален"
+
+#: .\task_manager\users\views.py:72
+msgid "Logged out"
+msgstr "Вы разлогинены"
+
+#~ msgid "Already_logged_in"
+#~ msgstr "Вы уже вошли в систему"
+
+#~ msgid "Not_enough_permissions"
+#~ msgstr "У вас нет прав для изменения другого пользователя."
 
 #, fuzzy
 #~| msgid "Registration"

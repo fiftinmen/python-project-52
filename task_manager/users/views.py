@@ -69,5 +69,5 @@ class UsersLogoutView(CustomLoginRequiredMixin, LogoutView):
     template_name = "index.html"
 
     def post(self, request, *args, **kwargs):
-        info(request, _("Logout"))
+        info(request, _("Logged out"))
         return super().post(request, *args, **kwargs)
