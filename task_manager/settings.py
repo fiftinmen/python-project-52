@@ -195,6 +195,6 @@ LOGOUT_REDIRECT_URL = reverse_lazy("index")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 STATIC_ROOT = BASE_DIR / "staticfiles"

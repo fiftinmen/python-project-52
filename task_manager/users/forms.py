@@ -1,12 +1,10 @@
 from django.contrib.auth.forms import (
     UserCreationForm,
     UserChangeForm,
-    AuthenticationForm,
 )
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model, password_validation
 from django import forms
-from task_manager.mixins import NoColonsFormMixin
 from django.utils.translation import gettext_lazy as _
 
 
@@ -23,7 +21,7 @@ class UsersRegisterForm(UserCreationForm):
         ]
 
 
-class UsersUpdateForm(NoColonsFormMixin, UserChangeForm):
+class UsersUpdateForm(UserChangeForm):
     password = None
 
     class Meta:
