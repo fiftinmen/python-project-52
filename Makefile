@@ -35,6 +35,10 @@ db-clean:
 	@$(MANAGE) makemigrations
 	@$(MANAGE) migrate
 
+.PHONY: makemigrations
+ makemigrations:
+	@$(MANAGE) makemigrations
+
 .PHONY: migrate
 migrate:
 	@$(MANAGE) migrate
