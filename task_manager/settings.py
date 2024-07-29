@@ -171,7 +171,7 @@ LOCALE_PATHS = [
 
 LANGUAGES = [
     ("ru", _("Russian")),
-    #    ("en", _("English")),
+    ("en", _("English")),
 ]
 
 LANGUAGE_CODE = "ru"
