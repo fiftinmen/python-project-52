@@ -34,7 +34,7 @@ load_dotenv()
 SECRET_KEY = os.environ["SECRET_KEY"]
 DATABASE_URL = os.environ.get("DATABASE_URL")
 ROLLBAR_TOKEN = os.environ.get("ROLLBAR_TOKEN")
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
@@ -116,7 +116,7 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if not DEBUG:
+if DATABASE_URL is not None:
     DATABASES = {
         "default": dj_database_url.config(
             conn_max_age=600,
