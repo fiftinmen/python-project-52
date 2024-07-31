@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-29 21:10+0300\n"
+"POT-Creation-Date: 2024-07-30 16:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,15 +156,12 @@ msgid "Confirm_delete_item"
 msgstr "Вы уверены, что хотите удалить"
 
 #: .\task_manager\templates\labels\delete.html:18
-#: .\task_manager\templates\labels\index.html:32
 #: .\task_manager\templates\statuses\delete.html:18
-#: .\task_manager\templates\statuses\index.html:32
 #: .\task_manager\templates\tasks\delete.html:18
-#: .\task_manager\templates\tasks\detail.html:44
-#: .\task_manager\templates\tasks\index.html:54
 #: .\task_manager\templates\users\delete.html:18
-#: .\task_manager\templates\users\index.html:33
-msgid "Delete"
+#, fuzzy
+#| msgid "Delete"
+msgid "Yes, Delete"
 msgstr "Да, удалить"
 
 #: .\task_manager\templates\labels\index.html:14
@@ -198,12 +195,20 @@ msgstr "Действия"
 msgid "Update"
 msgstr "Изменить"
 
+#: .\task_manager\templates\labels\index.html:32
+#: .\task_manager\templates\statuses\index.html:32
+#: .\task_manager\templates\tasks\detail.html:44
+#: .\task_manager\templates\tasks\index.html:54
+#: .\task_manager\templates\users\index.html:33
+msgid "Delete"
+msgstr "Удалить"
+
 #: .\task_manager\templates\layout.html:13
 msgid "SiteDescription"
 msgstr "Простой менеджер задач"
 
 #: .\task_manager\templates\navigation.html:15
-#: .\task_manager\users\models.py:33 .\task_manager\users\views.py:19
+#: .\task_manager\users\models.py:38 .\task_manager\users\views.py:17
 msgid "Users"
 msgstr "Пользователи"
 
@@ -274,7 +279,7 @@ msgid "id"
 msgstr "ID"
 
 #: .\task_manager\templates\users\index.html:12
-#: .\task_manager\users\models.py:12
+#: .\task_manager\users\models.py:14
 msgid "Username"
 msgstr "Имя пользователя"
 
@@ -314,7 +319,7 @@ msgstr "Вы не авторизованы! Пожалуйста, выполни
 msgid "Not_permitted_to_modify_object"
 msgstr "Не разрешено изменять объект"
 
-#: .\task_manager\users\models.py:15
+#: .\task_manager\users\models.py:17
 msgid ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_."
@@ -322,43 +327,43 @@ msgstr ""
 "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
 "+/-/_."
 
-#: .\task_manager\users\models.py:19
+#: .\task_manager\users\models.py:24
 msgid "First name"
 msgstr "Имя"
 
-#: .\task_manager\users\models.py:20
+#: .\task_manager\users\models.py:25
 msgid "Last name"
 msgstr "Фамилия"
 
-#: .\task_manager\users\models.py:21
+#: .\task_manager\users\models.py:26
 msgid "Password"
 msgstr "Пароль"
 
-#: .\task_manager\users\models.py:23
+#: .\task_manager\users\models.py:28
 msgid "date joined"
 msgstr "Дата регистрации"
 
-#: .\task_manager\users\models.py:32
+#: .\task_manager\users\models.py:37
 msgid "User"
 msgstr "Пользователь"
 
-#: .\task_manager\users\views.py:36
-msgid "Logged_in"
-msgstr "Вы залогинены"
-
-#: .\task_manager\users\views.py:43
+#: .\task_manager\users\views.py:34
 msgid "Registration_success"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: .\task_manager\users\views.py:54
+#: .\task_manager\users\views.py:45
 msgid "User_update_success"
 msgstr "Пользователь успешно изменен"
 
-#: .\task_manager\users\views.py:64
+#: .\task_manager\users\views.py:55
 msgid "User_deletion_success"
 msgstr "Пользователь успешно удален"
 
-#: .\task_manager\users\views.py:72
+#: .\task_manager\views.py:21
+msgid "Logged_in"
+msgstr "Вы залогинены"
+
+#: .\task_manager\views.py:29
 msgid "Logged out"
 msgstr "Вы разлогинены"
 

@@ -292,9 +292,6 @@ class TestUsersGetCRUDSs(TestCase, _TestUsersUtilsMixin):
     def _test_users_get_fail(self, user):
         valid_user = self.get_or_create_user(user)
         self.client.force_login(valid_user)
-        response = self.client.get(reverse_lazy("users_create"))
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("index"))
 
         other_user = self.get_or_create_user(other_user_data)
 

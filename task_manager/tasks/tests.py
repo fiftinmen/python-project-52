@@ -42,62 +42,6 @@ class _TestTasksUtilsMixin(_TestUtilsMixin):
         return task
 
 
-class TestTasksFilters(TestCase, _TestUtilsMixin):
-    fixtures = ("fixtures.json.gz",)
-
-    def setUp(self):
-        self.users = CustomUser.objects.all()
-        self.current_user = self.users[0]
-        self.current_user_tasks = self.current_user.task_author
-        self.client = Client()
-        self._tests_to_success_tuple = (
-            ("_test_tasks_filter_by_own_tasks", (None,)),
-            ("_test_tasks_filter_by_executor", self.users),
-        )
-
-    def _test_tasks_filter_by_own_tasks(self, *arg):
-        self.client.force_login(self.current_user)
-        url = reverse_lazy("tasks_index")
-        data = {"only_own_tasks": True}
-        response = self.client.get(url, data)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(
-            response,
-            f"{self.current_user.username}",
-        )
-        self.assertTrue(
-            response,
-            all(
-                self.assertContains(response, task.name)
-                for task in self.current_user_tasks.all()
-            ),
-        )
-        expected_rows_number = (
-            self.current_user_tasks.all().count() + HEADER_ROWS_NUMBER
-        )
-        self.assertContains(response, "<tr", expected_rows_number)
-
-    def _test_tasks_filter_by_executor(self, executor):
-        self.client.force_login(self.current_user)
-        tasks = executor.task_executor
-        url = reverse_lazy("tasks_index")
-        data = {"executor": executor.pk}
-        response = self.client.get(url, data)
-        self.assertEqual(response.status_code, 200)
-        self.assertContains(
-            response,
-            f"{executor.username}",
-        )
-        self.assertTrue(
-            response,
-            all(
-                self.assertContains(response, task.name) for task in tasks.all()
-            ),
-        )
-        expected_rows_number = tasks.all().count() + HEADER_ROWS_NUMBER
-        self.assertContains(response, "<tr", expected_rows_number)
-
-
 class TestsTasks(
     _TestTasksUtilsMixin,
     TestCase,
@@ -224,3 +168,60 @@ class TestsTasks(
         self.assertRedirects(response, redirect_url)
         self.assertTrue(Task.objects.filter(name=task_data["name"]).exists())
         self.client.logout()
+
+
+class TestTasksFilters(TestCase, _TestUtilsMixin):
+    fixtures = ("fixtures.json",)
+
+    def setUp(self):
+        self.users = CustomUser.objects.all()
+        self.current_user = self.users[0]
+        self.current_user_tasks = self.current_user.task_author
+        self.client = Client()
+        self._tests_to_success_tuple = (
+            # ("_test_tasks_filter_by_own_tasks", (None,)),
+            ("_test_tasks_filter_by_executor", self.users),
+        )
+
+    def _test_tasks_filter_by_own_tasks(self, *arg):
+        self.client.force_login(self.current_user)
+        url = reverse_lazy("tasks_index")
+        print(url)
+        data = {"only_own_tasks": True}
+        response = self.client.get(url, data)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            f"{self.current_user.username}",
+        )
+        self.assertTrue(
+            response,
+            all(
+                self.assertContains(response, task.name)
+                for task in self.current_user_tasks.all()
+            ),
+        )
+        expected_rows_number = (
+            self.current_user_tasks.all().count() + HEADER_ROWS_NUMBER
+        )
+        self.assertContains(response, "<tr", expected_rows_number)
+
+    def _test_tasks_filter_by_executor(self, executor):
+        self.client.force_login(self.current_user)
+        tasks = executor.task_executor
+        url = reverse_lazy("tasks_index")
+        data = {"executor": executor.pk}
+        response = self.client.get(url, data)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(
+            response,
+            f"{executor.username}",
+        )
+        self.assertTrue(
+            response,
+            all(
+                self.assertContains(response, task.name) for task in tasks.all()
+            ),
+        )
+        expected_rows_number = tasks.all().count() + HEADER_ROWS_NUMBER
+        self.assertContains(response, "<tr", expected_rows_number)

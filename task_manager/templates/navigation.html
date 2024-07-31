@@ -45,7 +45,7 @@
                         <a class="nav-link" href="{% url 'users_profile' %}">{% trans 'Account' %} </a>
                     </li>
                     <li class="nav-item">
-                        <form action="{% url 'users_logout' %}" method="post">
+                        <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                             <input class="btn nav-link" type="submit" value="{% trans 'Logout' %}">
                         </form>

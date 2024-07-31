@@ -1,13 +1,7 @@
 .env
-inventory.ini
-ans-commands-examples
-playbook.yml
-script.sh
 staticfiles
 .vscode
 dist
 __pycache__
-graph_models.html
-description.txt
-test_output.html
 task_manager.sqlite3
+temp

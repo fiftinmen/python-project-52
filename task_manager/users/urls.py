@@ -23,8 +23,6 @@ urlpatterns = [
     path("", views.UsersIndexView.as_view(), name="users_index"),
     path("<int:pk>/", views.UsersDetailView.as_view(), name="users_detail"),
     path("create/", views.UsersCreateView.as_view(), name="users_create"),
-    path("login/", views.UsersLoginView.as_view(), name="users_login"),
-    path("logout/", views.UsersLogoutView.as_view(), name="users_logout"),
     path("profile/", views.UsersDetailView.as_view(), name="users_profile"),
     path(
         "delete/<int:pk>/",

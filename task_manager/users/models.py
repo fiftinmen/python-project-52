@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
@@ -15,6 +16,9 @@ class CustomUser(AbstractUser):
             "Обязательное поле. Не более 150 символов. Только буквы, "
             "цифры и символы @/./+/-/_."
         ),
+        validators=[
+            RegexValidator(regex=r"[^A-Za-z@.+-_]+", inverse_match=True)
+        ],
     )
     first_name = models.CharField(max_length=150, verbose_name=_("First name"))
     last_name = models.CharField(max_length=150, verbose_name=_("Last name"))
