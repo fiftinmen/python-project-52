@@ -187,7 +187,7 @@ USE_TZ = True
 
 STATIC_URL = "staticfiles/"
 LOGIN_REDIRECT_URL = reverse_lazy("index")
-LOGIN_URL = reverse_lazy("users_login")
+LOGIN_URL = reverse_lazy("login")
 LOGOUT_REDIRECT_URL = reverse_lazy("index")
 
 # Default primary key field type

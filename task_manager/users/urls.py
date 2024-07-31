@@ -25,12 +25,12 @@ urlpatterns = [
     path("create/", views.UsersCreateView.as_view(), name="users_create"),
     path("profile/", views.UsersDetailView.as_view(), name="users_profile"),
     path(
-        "delete/<int:pk>/",
+        "<int:pk>/delete/",
         views.UsersDeleteView.as_view(),
         name="users_delete",
     ),
     path(
-        "update/<int:pk>/",
+        "<int:pk>/update/",
         views.UsersUpdateView.as_view(),
         name="users_update",
     ),

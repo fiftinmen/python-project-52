@@ -72,7 +72,7 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         )
         response = self.client.post(reverse_lazy("users_create"), data)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("index"))
+        self.assertRedirects(response, reverse_lazy("login"))
         self.assertTrue(
             CustomUser.objects.filter(username=data["username"]).exists()
         )
@@ -164,7 +164,7 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         )
         response = self.client.post(reverse_lazy("users_create"), data)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("index"))
+        self.assertRedirects(response, reverse_lazy("login"))
         self.assertTrue(
             CustomUser.objects.filter(username=user["username"]).exists()
         )

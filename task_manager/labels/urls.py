@@ -28,12 +28,12 @@ urlpatterns = [
         name="labels_detail",
     ),
     path(
-        "delete/<int:pk>/",
+        "<int:pk>/delete/",
         views.LabelsDeleteView.as_view(),
         name="labels_delete",
     ),
     path(
-        "update/<int:pk>/",
+        "<int:pk>/update/",
         views.LabelsUpdateView.as_view(),
         name="labels_update",
     ),

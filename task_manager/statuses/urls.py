@@ -23,12 +23,12 @@ urlpatterns = [
     path("", views.StatusesIndexView.as_view(), name="statuses_index"),
     path("create/", views.StatusesCreateView.as_view(), name="statuses_create"),
     path(
-        "delete/<int:pk>/",
+        "<int:pk>/delete/",
         views.StatusesDeleteView.as_view(),
         name="statuses_delete",
     ),
     path(
-        "update/<int:pk>/",
+        "<int:pk>/update/",
         views.StatusesUpdateView.as_view(),
         name="statuses_update",
     ),

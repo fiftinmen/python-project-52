@@ -111,14 +111,14 @@ class TestsStatuses(TestCase, _TestStatusesUtilsMixin):
     def _test_statuses_get_fail(self, url_data: dict) -> None:
         response = self.client.get(reverse_lazy(**url_data))
         self.assertEqual(response.status_code, 302)
-        redirect_url = reverse_lazy("users_login")
+        redirect_url = reverse_lazy("login")
         self.assertRedirects(response, redirect_url)
 
     def _test_statuses_post_no_auth_fail(self, url_data: dict) -> None:
         data = {"name": self.default_status.name}
         response = self.client.post(reverse_lazy(**url_data), data)
         self.assertEqual(response.status_code, 302)
-        redirect_url = reverse_lazy("users_login")
+        redirect_url = reverse_lazy("login")
         self.assertRedirects(response, redirect_url)
 
     def _test_statuses_create_post_fail(self, invalid_status: dict) -> None:
