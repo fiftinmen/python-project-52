@@ -30,7 +30,8 @@ class UsersDetailView(DetailView):
 class UsersCreateView(SuccessMessageMixin, CreateView):
     form_class = forms.UsersRegisterForm
     template_name = "users/create.html"
-    next_page = success_url = reverse_lazy("index")
+    next_page = reverse_lazy("index")
+    success_url = reverse_lazy("login")
     success_message = _("Registration_success")
 
 

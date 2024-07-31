@@ -180,7 +180,7 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         url = reverse_lazy("users_update", args=(valid_user.id,))
         response = self.client.post(url, invalid_user_data)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("users_login"))
+        self.assertRedirects(response, reverse_lazy("login"))
         updated_user = CustomUser.objects.get(username=valid_user.username)
         self.assertEqual(
             (
@@ -239,7 +239,7 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         url = reverse_lazy("users_delete", args=(valid_user.id,))
         response = self.client.post(url)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("users_login"))
+        self.assertRedirects(response, reverse_lazy("login"))
         updated_user = CustomUser.objects.get(username=valid_user.username)
         self.assertEqual(
             (updated_user.first_name, updated_user.last_name),
@@ -310,9 +310,9 @@ class TestUsersGetCRUDSs(TestCase, _TestUsersUtilsMixin):
         url = reverse_lazy("users_update", args=(valid_user.id,))
         response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("users_login"))
+        self.assertRedirects(response, reverse_lazy("login"))
 
         url = reverse_lazy("users_delete", args=(valid_user.id,))
         response = self.client.get(url)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy("users_login"))
+        self.assertRedirects(response, reverse_lazy("login"))

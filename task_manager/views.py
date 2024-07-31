@@ -16,7 +16,7 @@ def index(request):
 
 class CustomLoginView(SuccessMessageMixin, LoginView):
     model = get_user_model()
-    template_name = "users/login.html"
+    template_name = "login.html"
     next_page = success_url = reverse_lazy("index")
     success_message = _("Logged_in")
 
