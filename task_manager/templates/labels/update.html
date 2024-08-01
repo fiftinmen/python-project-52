@@ -6,9 +6,8 @@
 
 {% block content %}
 <div class="container">
-    <form action="{% url "tasks_update" pk=object.pk %}" method="post">
+    <form action="{% url "labels_update" pk=object.pk %}" method="post">
         {% csrf_token %}
-        {{ pk }}
         <div class="mb-3 row">
             {% bootstrap_form form %}
         </div>
