@@ -2,6 +2,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.shortcuts import redirect
 from django.contrib.auth import get_user_model
+from django.contrib.messages import error
 from django.views.generic.list import ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -20,6 +21,7 @@ class UsersIndexView(ListView):
 class UsersDetailView(DetailView):
     model = get_user_model()
     template_name = "users/detail.html"
+    extra_context = {"page_header": _("User_details")}
 
     def get_object(self, queryset=None):
         if self.request.user.is_authenticated:
@@ -33,6 +35,7 @@ class UsersCreateView(SuccessMessageMixin, CreateView):
     next_page = reverse_lazy("index")
     success_url = reverse_lazy("login")
     success_message = _("Registration_success")
+    extra_context = {"page_header": _("Registration")}
 
 
 class UsersUpdateView(
@@ -43,6 +46,7 @@ class UsersUpdateView(
     template_name = "users/update.html"
     next_page = success_url = reverse_lazy("users_index")
     success_message = _("User_update_success")
+    extra_context = {"page_header": _("User_update")}
 
 
 class UsersDeleteView(
@@ -52,3 +56,13 @@ class UsersDeleteView(
     template_name = "users/delete.html"
     next_page = success_url = reverse_lazy("users_index")
     success_message = _("User_deletion_success")
+    extra_context = {"page_header": _("User_delete")}
+
+    def form_valid(self, form):
+        if (
+            self.object.task_author.exists()
+            or self.object.task_executor.exists()
+        ):
+            error(self.request, _("Can't_delete_user_in_use"))
+            return redirect(self.next_page)
+        return super().form_valid(form)

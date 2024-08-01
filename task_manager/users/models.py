@@ -12,10 +12,7 @@ class CustomUser(AbstractUser):
         max_length=150,
         verbose_name=_("Username"),
         unique=True,
-        help_text=_(
-            "Обязательное поле. Не более 150 символов. Только буквы, "
-            "цифры и символы @/./+/-/_."
-        ),
+        help_text=_("Username_field_description"),
         validators=[
             RegexValidator(regex=r"[^A-Za-z@.+-_]+", inverse_match=True)
         ],

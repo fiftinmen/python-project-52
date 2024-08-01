@@ -27,6 +27,7 @@ class StatusesCreateView(
     next_page = success_url = reverse_lazy("statuses_index")
     success_message = _("Status_creation_success")
     fields = ["name"]
+    extra_context = {"page_header": _("Create_status")}
 
 
 class StatusesUpdateView(
@@ -37,6 +38,7 @@ class StatusesUpdateView(
     next_page = success_url = reverse_lazy("statuses_index")
     success_message = _("Status_update_success")
     fields = ["name"]
+    extra_context = {"page_header": _("Status_delete")}
 
 
 class StatusesDeleteView(
@@ -46,9 +48,10 @@ class StatusesDeleteView(
     template_name = "statuses/delete.html"
     next_page = success_url = reverse_lazy("statuses_index")
     success_message = _("Status_deletion_success")
+    extra_context = {"page_header": _("Status_delete")}
 
     def form_valid(self, form):
-        if self.object.task_set.all().count() > 0:
+        if self.object.task_set.exists():
             error(self.request, _("Can't_delete_status_in_use"))
             return redirect(self.next_page)
         return super().form_valid(form)

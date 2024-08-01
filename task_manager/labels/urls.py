@@ -23,11 +23,6 @@ urlpatterns = [
     path("", views.LabelsIndexView.as_view(), name="labels_index"),
     path("create/", views.LabelsCreateView.as_view(), name="labels_create"),
     path(
-        "<int:pk>/",
-        views.LabelsDetailView.as_view(),
-        name="labels_detail",
-    ),
-    path(
         "<int:pk>/delete/",
         views.LabelsDeleteView.as_view(),
         name="labels_delete",

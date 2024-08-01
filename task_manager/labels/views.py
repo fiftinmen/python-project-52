@@ -19,11 +19,6 @@ class LabelsIndexView(LoginRequiredScenarioMixin, ListView):
     extra_context = {"page_header": _("Labels")}
 
 
-class LabelsDetailView(LoginRequiredScenarioMixin, DetailView):
-    model = Label
-    template_name = "labels/detail.html"
-
-
 class LabelsCreateView(
     LoginRequiredScenarioMixin, SuccessMessageMixin, CreateView
 ):
@@ -32,6 +27,7 @@ class LabelsCreateView(
     next_page = success_url = reverse_lazy("labels_index")
     success_message = _("Label_creation_success")
     fields = ["name"]
+    extra_context = {"page_header": _("Create_label")}
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -46,6 +42,7 @@ class LabelsUpdateView(
     next_page = success_url = reverse_lazy("labels_index")
     success_message = _("Label_update_success")
     fields = ["name"]
+    extra_context = {"page_header": _("Label_update")}
 
 
 class LabelsDeleteView(
@@ -57,9 +54,10 @@ class LabelsDeleteView(
     perms = ["labels.delete_all"]
     next_page = success_url = reverse_lazy("labels_index")
     success_message = _("Label_deletion_success")
+    extra_context = {"page_header": _("Label_delete")}
 
     def form_valid(self, form):
         if self.object.task_set.exists():
-            error(self.request, _("Can't_delete_status_in_use"))
+            error(self.request, _("Can't_delete_label_in_use"))
             return redirect(self.next_page)
         return super().form_valid(form)

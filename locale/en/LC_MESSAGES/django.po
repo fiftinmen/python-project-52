@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-01 11:43+0300\n"
+"POT-Creation-Date: 2024-08-01 17:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,28 +37,58 @@ msgstr "Created at"
 msgid "Label"
 msgstr "Label"
 
-#: .\task_manager\labels\models.py:19 .\task_manager\labels\views.py:20
+#: .\task_manager\labels\models.py:19 .\task_manager\labels\views.py:19
 #: .\task_manager\tasks\models.py:39
 #: .\task_manager\templates\navigation.html:25
 #: .\task_manager\templates\tasks\detail.html:36
 msgid "Labels"
 msgstr "Labels"
 
-#: .\task_manager\labels\views.py:34
+#: .\task_manager\labels\views.py:28
 msgid "Label_creation_success"
 msgstr "Label creation success"
 
-#: .\task_manager\labels\views.py:48
+#: .\task_manager\labels\views.py:30
+#, fuzzy
+#| msgid "Created_at"
+msgid "Create_label"
+msgstr "Created at"
+
+#: .\task_manager\labels\views.py:43
 msgid "Label_update_success"
 msgstr "Label update success"
 
-#: .\task_manager\labels\views.py:60
+#: .\task_manager\labels\views.py:45
+#, fuzzy
+#| msgid "Label_update_success"
+msgid "Label_update"
+msgstr "Label update success"
+
+#: .\task_manager\labels\views.py:56
 msgid "Label_deletion_success"
 msgstr "Label deletion success"
 
-#: .\task_manager\labels\views.py:64 .\task_manager\statuses\views.py:52
-msgid "Can't_delete_status_in_use"
+#: .\task_manager\labels\views.py:57
+#, fuzzy
+#| msgid "Label_deletion_success"
+msgid "Label_delete"
+msgstr "Label deletion success"
+
+#: .\task_manager\labels\views.py:61
+#, fuzzy
+#| msgid "Can't_delete_status_in_use"
+msgid "Can't_delete_label_in_use"
 msgstr "Can't delete status in use"
+
+#: .\task_manager\mixins.py:49
+msgid "login_required"
+msgstr ""
+
+#: .\task_manager\mixins.py:56
+#, fuzzy
+#| msgid "not_permitted"
+msgid "Not_permitted"
+msgstr "Not permitted"
 
 #: .\task_manager\settings.py:173
 msgid "Russian"
@@ -79,19 +109,36 @@ msgstr "Statuses"
 msgid "Status_creation_success"
 msgstr "Status creation success"
 
-#: .\task_manager\statuses\views.py:38
+#: .\task_manager\statuses\views.py:30
+#: .\task_manager\templates\statuses\index.html:9
+#, fuzzy
+#| msgid "Created_at"
+msgid "Create_status"
+msgstr "Created at"
+
+#: .\task_manager\statuses\views.py:39
 msgid "Status_update_success"
 msgstr "Status update success"
 
-#: .\task_manager\statuses\views.py:48
+#: .\task_manager\statuses\views.py:41 .\task_manager\statuses\views.py:51
+#, fuzzy
+#| msgid "Status_deletion_success"
+msgid "Status_delete"
+msgstr "Status deletion success"
+
+#: .\task_manager\statuses\views.py:50
 msgid "Status_deletion_success"
 msgstr "Status deletion success"
+
+#: .\task_manager\statuses\views.py:55
+msgid "Can't_delete_status_in_use"
+msgstr "Can't delete status in use"
 
 #: .\task_manager\tasks\filters.py:13
 msgid "Only own tasks"
 msgstr "Only own tasks"
 
-#: .\task_manager\tasks\mixins.py:10
+#: .\task_manager\tasks\mixins.py:15
 msgid "Only task's author can delete it"
 msgstr ""
 
@@ -124,16 +171,40 @@ msgstr "Tasks"
 msgid "Tasks"
 msgstr "Tasks"
 
-#: .\task_manager\tasks\views.py:45
+#: .\task_manager\tasks\views.py:35
+#, fuzzy
+#| msgid "Tasks"
+msgid "Task_view"
+msgstr "Tasks"
+
+#: .\task_manager\tasks\views.py:46
 msgid "Task_creation_success"
 msgstr "Task creation success"
 
-#: .\task_manager\tasks\views.py:61
+#: .\task_manager\tasks\views.py:48 .\task_manager\templates\tasks\index.html:9
+#, fuzzy
+#| msgid "Created_at"
+msgid "Create_task"
+msgstr "Created at"
+
+#: .\task_manager\tasks\views.py:63
 msgid "Task_update_success"
 msgstr "Task update success"
 
-#: .\task_manager\tasks\views.py:73
+#: .\task_manager\tasks\views.py:65
+#, fuzzy
+#| msgid "Task_update_success"
+msgid "Task_update"
+msgstr "Task update success"
+
+#: .\task_manager\tasks\views.py:75
 msgid "Task_deletion_success"
+msgstr "Task deletion success"
+
+#: .\task_manager\tasks\views.py:76
+#, fuzzy
+#| msgid "Task_deletion_success"
+msgid "Task_delete"
 msgstr "Task deletion success"
 
 #: .\task_manager\templates\footer.html:11
@@ -149,22 +220,20 @@ msgstr "Hello!"
 #: .\task_manager\templates\labels\create.html:16
 #: .\task_manager\templates\labels\index.html:9
 #: .\task_manager\templates\statuses\create.html:16
-#: .\task_manager\templates\statuses\index.html:9
 #: .\task_manager\templates\tasks\create.html:16
-#: .\task_manager\templates\tasks\index.html:9
 msgid "Create"
 msgstr "Create"
 
-#: .\task_manager\templates\labels\delete.html:13
+#: .\task_manager\templates\labels\delete.html:12
 #: .\task_manager\templates\statuses\delete.html:13
-#: .\task_manager\templates\tasks\delete.html:13
+#: .\task_manager\templates\tasks\delete.html:12
 msgid "Confirm_delete_item"
 msgstr "Confirm delete item"
 
-#: .\task_manager\templates\labels\delete.html:18
+#: .\task_manager\templates\labels\delete.html:16
 #: .\task_manager\templates\statuses\delete.html:18
-#: .\task_manager\templates\tasks\delete.html:18
-#: .\task_manager\templates\users\delete.html:18
+#: .\task_manager\templates\tasks\delete.html:16
+#: .\task_manager\templates\users\delete.html:16
 #, fuzzy
 #| msgid "Delete"
 msgid "Yes, Delete"
@@ -218,7 +287,7 @@ msgid "Enter"
 msgstr ""
 
 #: .\task_manager\templates\navigation.html:15
-#: .\task_manager\users\models.py:37 .\task_manager\users\views.py:17
+#: .\task_manager\users\models.py:34 .\task_manager\users\views.py:18
 msgid "Users"
 msgstr "Users"
 
@@ -226,7 +295,7 @@ msgstr "Users"
 msgid "Login"
 msgstr "Sign in"
 
-#: .\task_manager\templates\navigation.html:33
+#: .\task_manager\templates\navigation.html:33 .\task_manager\users\views.py:38
 msgid "Registration"
 msgstr "Sign Up"
 
@@ -286,7 +355,7 @@ msgstr ""
 msgid "Create_user"
 msgstr "Create"
 
-#: .\task_manager\templates\users\delete.html:13
+#: .\task_manager\templates\users\delete.html:12
 msgid "Confirm_delete"
 msgstr "Confirm delete"
 
@@ -327,81 +396,94 @@ msgstr "New password confirmation"
 msgid "Enter the same password as before, for verification."
 msgstr ""
 
-#: .\task_manager\users\mixins.py:50
-msgid "not_permitted"
-msgstr "Not permitted"
-
-#: .\task_manager\users\mixins.py:60
-msgid "login_required"
-msgstr ""
-
-#: .\task_manager\users\mixins.py:80
-msgid "Not_permitted_to_modify_object"
-msgstr "Not permitted to modify object"
-
-#: .\task_manager\users\mixins.py:110
+#: .\task_manager\users\mixins.py:15
 #, fuzzy
 #| msgid "Not_permitted_to_modify_object"
 msgid "You not permitted to modify other user"
 msgstr "Not permitted to modify object"
 
-#: .\task_manager\users\models.py:16
-msgid ""
-"Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
-"+/-/_."
+#: .\task_manager\users\models.py:15
+msgid "Username_field_description"
 msgstr ""
 
-#: .\task_manager\users\models.py:23
+#: .\task_manager\users\models.py:20
 #, fuzzy
 #| msgid "First"
 msgid "First name"
 msgstr "First"
 
-#: .\task_manager\users\models.py:24
+#: .\task_manager\users\models.py:21
 #, fuzzy
 #| msgid "Last"
 msgid "Last name"
 msgstr "Last"
 
-#: .\task_manager\users\models.py:25
+#: .\task_manager\users\models.py:22
 #, fuzzy
 #| msgid "New password"
 msgid "Password"
 msgstr "New password"
 
-#: .\task_manager\users\models.py:27
+#: .\task_manager\users\models.py:24
 msgid "date joined"
 msgstr ""
 
-#: .\task_manager\users\models.py:36
+#: .\task_manager\users\models.py:33
 #, fuzzy
 #| msgid "Users"
 msgid "User"
 msgstr "Users"
 
-#: .\task_manager\users\views.py:35
+#: .\task_manager\users\views.py:24
+#, fuzzy
+#| msgid "User_deletion_success"
+msgid "User_details"
+msgstr "User deletion success"
+
+#: .\task_manager\users\views.py:37
 #, fuzzy
 #| msgid "Registration"
 msgid "Registration_success"
 msgstr "Registration success"
 
-#: .\task_manager\users\views.py:46
+#: .\task_manager\users\views.py:48
 msgid "User_update_success"
 msgstr "User update success"
 
-#: .\task_manager\users\views.py:56
+#: .\task_manager\users\views.py:49
+#, fuzzy
+#| msgid "User_update_success"
+msgid "User_update"
+msgstr "User update success"
+
+#: .\task_manager\users\views.py:58
 msgid "User_deletion_success"
 msgstr "User deletion success"
 
-#: .\task_manager\views.py:21
+#: .\task_manager\users\views.py:59
+#, fuzzy
+#| msgid "User_deletion_success"
+msgid "User_delete"
+msgstr "User deletion success"
+
+#: .\task_manager\users\views.py:66
+#, fuzzy
+#| msgid "Can't_delete_status_in_use"
+msgid "Can't_delete_user_in_use"
+msgstr "Can't delete status in use"
+
+#: .\task_manager\views.py:20
 msgid "Logged_in"
 msgstr "Logged in"
 
-#: .\task_manager\views.py:29
+#: .\task_manager\views.py:28
 #, fuzzy
 #| msgid "Logged_in"
 msgid "Logged out"
 msgstr "Logged in"
+
+#~ msgid "Not_permitted_to_modify_object"
+#~ msgstr "Not permitted to modify object"
 
 #~ msgid "Already_logged_in"
 #~ msgstr "Already logged in"

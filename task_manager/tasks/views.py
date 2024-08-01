@@ -32,6 +32,7 @@ class TasksIndexView(LoginRequiredScenarioMixin, FilterView):
 class TasksDetailView(LoginRequiredScenarioMixin, DetailView):
     model = Task
     template_name = "tasks/detail.html"
+    extra_context = {"page_header": _("Task_view")}
 
 
 class TasksCreateView(
@@ -44,6 +45,7 @@ class TasksCreateView(
     next_page = success_url = reverse_lazy("tasks_index")
     success_message = _("Task_creation_success")
     fields = ["name", "description", "status", "executor", "labels"]
+    extra_context = {"page_header": _("Create_task")}
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -60,6 +62,7 @@ class TasksUpdateView(
     next_page = success_url = reverse_lazy("tasks_index")
     success_message = _("Task_update_success")
     fields = ["name", "description", "status", "executor", "labels"]
+    extra_context = {"page_header": _("Task_update")}
 
 
 class TasksDeleteView(
@@ -70,3 +73,4 @@ class TasksDeleteView(
     template_name = "tasks/delete.html"
     next_page = success_url = reverse_lazy("tasks_index")
     success_message = _("Task_deletion_success")
+    extra_context = {"page_header": _("Task_delete")}
