@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-01 17:30+0300\n"
+"POT-Creation-Date: 2024-08-01 17:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,7 @@ msgid "Label_creation_success"
 msgstr "Метка успешно создана"
 
 #: .\task_manager\labels\views.py:30
+#: .\task_manager\templates\labels\index.html:9
 msgid "Create_label"
 msgstr "Создать метку"
 
@@ -194,20 +195,19 @@ msgid "Greeting"
 msgstr "Привет!"
 
 #: .\task_manager\templates\labels\create.html:16
-#: .\task_manager\templates\labels\index.html:9
 #: .\task_manager\templates\statuses\create.html:16
 #: .\task_manager\templates\tasks\create.html:16
 msgid "Create"
 msgstr "Создать"
 
 #: .\task_manager\templates\labels\delete.html:12
-#: .\task_manager\templates\statuses\delete.html:13
+#: .\task_manager\templates\statuses\delete.html:12
 #: .\task_manager\templates\tasks\delete.html:12
 msgid "Confirm_delete_item"
 msgstr "Вы уверены, что хотите удалить"
 
 #: .\task_manager\templates\labels\delete.html:16
-#: .\task_manager\templates\statuses\delete.html:18
+#: .\task_manager\templates\statuses\delete.html:16
 #: .\task_manager\templates\tasks\delete.html:16
 #: .\task_manager\templates\users\delete.html:16
 msgid "Yes, Delete"
@@ -348,22 +348,6 @@ msgstr "Полное имя"
 msgid "Date of registration"
 msgstr "Дата регистрации"
 
-#: .\task_manager\users\forms.py:36
-msgid "The two password fields didn’t match."
-msgstr "Пароли не совпадают"
-
-#: .\task_manager\users\forms.py:39
-msgid "New password"
-msgstr "Новый пароль"
-
-#: .\task_manager\users\forms.py:45
-msgid "New password confirmation"
-msgstr "Подтверждение нового пароля"
-
-#: .\task_manager\users\forms.py:48
-msgid "Enter the same password as before, for verification."
-msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
-
 #: .\task_manager\users\mixins.py:15
 msgid "You not permitted to modify other user"
 msgstr "У вас нет прав для изменения другого пользователя."
@@ -402,23 +386,23 @@ msgstr "Профиль пользователя"
 msgid "Registration_success"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: .\task_manager\users\views.py:48
+#: .\task_manager\users\views.py:49
 msgid "User_update_success"
 msgstr "Пользователь успешно изменен"
 
-#: .\task_manager\users\views.py:49
+#: .\task_manager\users\views.py:50
 msgid "User_update"
 msgstr "Изменение пользователя"
 
-#: .\task_manager\users\views.py:58
+#: .\task_manager\users\views.py:59
 msgid "User_deletion_success"
 msgstr "Пользователь успешно удален"
 
-#: .\task_manager\users\views.py:59
+#: .\task_manager\users\views.py:60
 msgid "User_delete"
 msgstr "Удаление пользователя"
 
-#: .\task_manager\users\views.py:66
+#: .\task_manager\users\views.py:67
 msgid "Can't_delete_user_in_use"
 msgstr "Невозможно удалить пользователя, потому что он используется"
 
@@ -429,6 +413,18 @@ msgstr "Вы залогинены"
 #: .\task_manager\views.py:28
 msgid "Logged out"
 msgstr "Вы разлогинены"
+
+#~ msgid "The two password fields didn’t match."
+#~ msgstr "Пароли не совпадают"
+
+#~ msgid "New password"
+#~ msgstr "Новый пароль"
+
+#~ msgid "New password confirmation"
+#~ msgstr "Подтверждение нового пароля"
+
+#~ msgid "Enter the same password as before, for verification."
+#~ msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
 #~ msgid "Not_permitted_to_modify_object"
 #~ msgstr "Не разрешено изменять объект"

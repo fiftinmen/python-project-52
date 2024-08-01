@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-01 17:30+0300\n"
+"POT-Creation-Date: 2024-08-01 17:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,6 +49,7 @@ msgid "Label_creation_success"
 msgstr "Label creation success"
 
 #: .\task_manager\labels\views.py:30
+#: .\task_manager\templates\labels\index.html:9
 #, fuzzy
 #| msgid "Created_at"
 msgid "Create_label"
@@ -218,20 +219,19 @@ msgid "Greeting"
 msgstr "Hello!"
 
 #: .\task_manager\templates\labels\create.html:16
-#: .\task_manager\templates\labels\index.html:9
 #: .\task_manager\templates\statuses\create.html:16
 #: .\task_manager\templates\tasks\create.html:16
 msgid "Create"
 msgstr "Create"
 
 #: .\task_manager\templates\labels\delete.html:12
-#: .\task_manager\templates\statuses\delete.html:13
+#: .\task_manager\templates\statuses\delete.html:12
 #: .\task_manager\templates\tasks\delete.html:12
 msgid "Confirm_delete_item"
 msgstr "Confirm delete item"
 
 #: .\task_manager\templates\labels\delete.html:16
-#: .\task_manager\templates\statuses\delete.html:18
+#: .\task_manager\templates\statuses\delete.html:16
 #: .\task_manager\templates\tasks\delete.html:16
 #: .\task_manager\templates\users\delete.html:16
 #, fuzzy
@@ -380,22 +380,6 @@ msgstr "Full name"
 msgid "Date of registration"
 msgstr "Date of registration"
 
-#: .\task_manager\users\forms.py:36
-msgid "The two password fields didn’t match."
-msgstr "The two password fields didn’t match."
-
-#: .\task_manager\users\forms.py:39
-msgid "New password"
-msgstr "New password"
-
-#: .\task_manager\users\forms.py:45
-msgid "New password confirmation"
-msgstr "New password confirmation"
-
-#: .\task_manager\users\forms.py:48
-msgid "Enter the same password as before, for verification."
-msgstr ""
-
 #: .\task_manager\users\mixins.py:15
 #, fuzzy
 #| msgid "Not_permitted_to_modify_object"
@@ -446,27 +430,27 @@ msgstr "User deletion success"
 msgid "Registration_success"
 msgstr "Registration success"
 
-#: .\task_manager\users\views.py:48
+#: .\task_manager\users\views.py:49
 msgid "User_update_success"
 msgstr "User update success"
 
-#: .\task_manager\users\views.py:49
+#: .\task_manager\users\views.py:50
 #, fuzzy
 #| msgid "User_update_success"
 msgid "User_update"
 msgstr "User update success"
 
-#: .\task_manager\users\views.py:58
+#: .\task_manager\users\views.py:59
 msgid "User_deletion_success"
 msgstr "User deletion success"
 
-#: .\task_manager\users\views.py:59
+#: .\task_manager\users\views.py:60
 #, fuzzy
 #| msgid "User_deletion_success"
 msgid "User_delete"
 msgstr "User deletion success"
 
-#: .\task_manager\users\views.py:66
+#: .\task_manager\users\views.py:67
 #, fuzzy
 #| msgid "Can't_delete_status_in_use"
 msgid "Can't_delete_user_in_use"
@@ -481,6 +465,15 @@ msgstr "Logged in"
 #| msgid "Logged_in"
 msgid "Logged out"
 msgstr "Logged in"
+
+#~ msgid "The two password fields didn’t match."
+#~ msgstr "The two password fields didn’t match."
+
+#~ msgid "New password"
+#~ msgstr "New password"
+
+#~ msgid "New password confirmation"
+#~ msgstr "New password confirmation"
 
 #~ msgid "Not_permitted_to_modify_object"
 #~ msgstr "Not permitted to modify object"
