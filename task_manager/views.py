@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
-from task_manager.users.mixins import CustomLoginRequiredMixin
 from django.contrib.messages import info
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
@@ -21,7 +20,7 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
     success_message = _("Logged_in")
 
 
-class CustomLogoutView(CustomLoginRequiredMixin, LogoutView):
+class CustomLogoutView(LogoutView):
     next_page = success_url = reverse_lazy("index")
     template_name = "index.html"
 

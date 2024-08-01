@@ -5,14 +5,14 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
-<a class="btn btn-primary mb-3" href={% url 'tasks_create'%}>
+<a class="btn btn-primary mb-3" href="{% url 'tasks_create'%}"">
     {% trans "Create" %}
 </a>
     <div class="card mb-3">
         <div class="card-body bg-light">
             <form method="get" class="form-inline center">
                     {% bootstrap_form filter.form %}
-                    <button type="submit" class="btn btn-primary">{% trans "Показать" %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans "Show" %}</button>
             </form>
         </div>
     </div>

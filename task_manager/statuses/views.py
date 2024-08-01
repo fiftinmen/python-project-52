@@ -6,12 +6,12 @@ from django.contrib.messages import error
 from django.views.generic.list import ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from .models import Status
-from task_manager.users.mixins import CustomLoginRequiredMixin
+from task_manager.mixins import LoginRequiredScenarioMixin
 
 # Create your views here.
 
 
-class StatusesIndexView(CustomLoginRequiredMixin, ListView):
+class StatusesIndexView(LoginRequiredScenarioMixin, ListView):
     model = Status
     pagination = 10
     template_name = "statuses/index.html"
@@ -20,7 +20,7 @@ class StatusesIndexView(CustomLoginRequiredMixin, ListView):
 
 
 class StatusesCreateView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, CreateView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, CreateView
 ):
     model = Status
     template_name = "statuses/create.html"
@@ -30,7 +30,7 @@ class StatusesCreateView(
 
 
 class StatusesUpdateView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, UpdateView
 ):
     model = Status
     template_name = "statuses/update.html"
@@ -40,7 +40,7 @@ class StatusesUpdateView(
 
 
 class StatusesDeleteView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, DeleteView
 ):
     model = Status
     template_name = "statuses/delete.html"

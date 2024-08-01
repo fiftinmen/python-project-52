@@ -4,23 +4,23 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 # from django.views.generic.list import ListView
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
-from task_manager.users.mixins import CustomLoginRequiredMixin
+from task_manager.mixins import LoginRequiredScenarioMixin
 from .filters import TasksFilter
 from .models import Task
-from .mixins import TasksModifyPermissionMixin
+from .mixins import TasksDeletePermissionMixin
 from django_filters.views import FilterView
 
 # Create your views here.
 
 
-""" class TasksIndexView(CustomLoginRequiredMixin, ListView):
+""" class TasksIndexView(LoginRequiredScenarioMixin, ListView):
     model = Task
     pagination = 10
     template_name = "tasks/index.html"
     next_page = reverse_lazy("index") """
 
 
-class TasksIndexView(CustomLoginRequiredMixin, FilterView):
+class TasksIndexView(LoginRequiredScenarioMixin, FilterView):
     model = Task
     pagination = 10
     template_name = "tasks/index.html"
@@ -29,13 +29,13 @@ class TasksIndexView(CustomLoginRequiredMixin, FilterView):
     extra_context = {"page_header": _("Tasks")}
 
 
-class TasksDetailView(CustomLoginRequiredMixin, DetailView):
+class TasksDetailView(LoginRequiredScenarioMixin, DetailView):
     model = Task
     template_name = "tasks/detail.html"
 
 
 class TasksCreateView(
-    CustomLoginRequiredMixin,
+    LoginRequiredScenarioMixin,
     SuccessMessageMixin,
     CreateView,
 ):
@@ -51,7 +51,7 @@ class TasksCreateView(
 
 
 class TasksUpdateView(
-    CustomLoginRequiredMixin,
+    LoginRequiredScenarioMixin,
     SuccessMessageMixin,
     UpdateView,
 ):
@@ -63,11 +63,10 @@ class TasksUpdateView(
 
 
 class TasksDeleteView(
-    TasksModifyPermissionMixin, SuccessMessageMixin, DeleteView
+    TasksDeletePermissionMixin, SuccessMessageMixin, DeleteView
 ):
     model = Task
     owner_field = "author"
     template_name = "tasks/delete.html"
-    perms = ["tasks.delete_all"]
     next_page = success_url = reverse_lazy("tasks_index")
     success_message = _("Task_deletion_success")

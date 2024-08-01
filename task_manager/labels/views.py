@@ -5,14 +5,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.messages import error
 from django.views.generic.list import ListView
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
-from task_manager.users.mixins import CustomLoginRequiredMixin
-
+from task_manager.mixins import LoginRequiredScenarioMixin
 from .models import Label
 
 # Create your views here.
 
 
-class LabelsIndexView(CustomLoginRequiredMixin, ListView):
+class LabelsIndexView(LoginRequiredScenarioMixin, ListView):
     model = Label
     pagination = 10
     template_name = "labels/index.html"
@@ -20,13 +19,13 @@ class LabelsIndexView(CustomLoginRequiredMixin, ListView):
     extra_context = {"page_header": _("Labels")}
 
 
-class LabelsDetailView(CustomLoginRequiredMixin, DetailView):
+class LabelsDetailView(LoginRequiredScenarioMixin, DetailView):
     model = Label
     template_name = "labels/detail.html"
 
 
 class LabelsCreateView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, CreateView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, CreateView
 ):
     model = Label
     template_name = "labels/create.html"
@@ -40,7 +39,7 @@ class LabelsCreateView(
 
 
 class LabelsUpdateView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, UpdateView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, UpdateView
 ):
     model = Label
     template_name = "labels/update.html"
@@ -50,7 +49,7 @@ class LabelsUpdateView(
 
 
 class LabelsDeleteView(
-    CustomLoginRequiredMixin, SuccessMessageMixin, DeleteView
+    LoginRequiredScenarioMixin, SuccessMessageMixin, DeleteView
 ):
     model = Label
     owner_field = "author"

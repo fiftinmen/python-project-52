@@ -28,12 +28,16 @@ class _TestUsersUtilsMixin(_TestUtilsMixin):
             self.delete_user(user_data["username"])
         user, _ = CustomUser.objects.get_or_create(
             username=user_data["username"],
-            password=user_data.get("password")
-            or user_data.get("password1")
-            or user_data.get("new_password1"),
             first_name=user_data["first_name"],
             last_name=user_data["last_name"],
         )
+        password = (
+            user_data.get("password")
+            or user_data.get("password1")
+            or user_data.get("new_password1")
+        )
+        user.set_password(password)
+        user.save()
         return user
 
 
@@ -82,8 +86,8 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
             "username": user["username"],
             "first_name": user["last_name"],
             "last_name": user["first_name"],
-            "new_password1": user["password1"],
-            "new_password2": user["password2"],
+            "password1": user["password1"],
+            "password2": user["password2"],
         }
 
         self.client.force_login(
@@ -196,20 +200,31 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         )
 
         self.client.force_login(user=valid_user)
-        url = reverse_lazy("users_update", args=(valid_user.id,))
-        response = self.client.post(url, invalid_user_data)
+        url = reverse_lazy("users_update", args=(valid_user.pk,))
+        update_data = {
+            "username": invalid_user_data["username"],
+            "password1": invalid_user_data["new_password1"],
+            "password2": invalid_user_data["new_password2"],
+            "first_name": invalid_user_data["first_name"],
+            "last_name": invalid_user_data["last_name"],
+        }
+        response = self.client.post(url, update_data)
         self.assertEqual(response.status_code, 200)
-        updated_user = CustomUser.objects.get(username=valid_user.username)
+        updated_user = CustomUser.objects.get(pk=valid_user.pk)
         self.assertEqual(
             (
-                updated_user.username,
-                updated_user.first_name,
-                updated_user.last_name,
-            ),
-            (
+                valid_user.pk,
                 valid_user.username,
                 valid_user.first_name,
                 valid_user.last_name,
+                valid_user.password,
+            ),
+            (
+                updated_user.pk,
+                updated_user.username,
+                updated_user.first_name,
+                updated_user.last_name,
+                updated_user.password,
             ),
         )
 

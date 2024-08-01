@@ -39,7 +39,6 @@ class UsersUpdateView(
     UsersModifyPermissionMixin, SuccessMessageMixin, UpdateView
 ):
     model = get_user_model()
-    perms = ["users.update_all"]
     form_class = forms.UsersUpdateForm
     template_name = "users/update.html"
     next_page = success_url = reverse_lazy("users_index")
@@ -50,7 +49,6 @@ class UsersDeleteView(
     UsersModifyPermissionMixin, SuccessMessageMixin, DeleteView
 ):
     model = get_user_model()
-    perms = ["users.delete_all"]
     template_name = "users/delete.html"
     next_page = success_url = reverse_lazy("users_index")
     success_message = _("User_deletion_success")
