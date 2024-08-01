@@ -21,7 +21,7 @@ class UsersRegisterForm(UserCreationForm):
         ]
 
 
-class UsersUpdateForm(UserChangeForm):
+""" class UsersUpdateForm(UserChangeForm):
     password = None
 
     class Meta:
@@ -46,7 +46,7 @@ class UsersUpdateForm(UserChangeForm):
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         help_text=_("Enter the same password as before, for verification."),
-    )
+    ) 
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -73,3 +73,4 @@ class UsersUpdateForm(UserChangeForm):
         if commit:
             self.instance.save()
         return self.instance
+"""

@@ -42,7 +42,8 @@ class UsersUpdateView(
     UsersModifyPermissionMixin, SuccessMessageMixin, UpdateView
 ):
     model = get_user_model()
-    form_class = forms.UsersUpdateForm
+    # form_class = forms.UsersUpdateForm
+    form_class = forms.UsersRegisterForm
     template_name = "users/update.html"
     next_page = success_url = reverse_lazy("users_index")
     success_message = _("User_update_success")
