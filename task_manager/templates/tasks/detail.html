@@ -37,7 +37,7 @@
         <td>{% trans 'Labels' %}</td>
         <td>{% if object.labels %}
             <ul>
-                {% for label in object.label%}
+                {% for label in object.labels.all %}
                 <li>{{ label }}</li>
                 {% endfor %}
             </ul>
