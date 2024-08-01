@@ -39,7 +39,7 @@
             <ul>
                 {% for label in object.label%}
                 <li>{{ label }}</li>
-                {% endif %}
+                {% endfor %}
             </ul>
         {% else %}
         <em>{% trans 'Not specified' %}</em>
