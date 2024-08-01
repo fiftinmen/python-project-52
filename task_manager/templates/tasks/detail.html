@@ -36,7 +36,11 @@
         <tr>
         <td>{% trans 'Labels' %}</td>
         <td>{% if object.labels %}
-        {{ object.labels }} 
+            <ul>
+                {% for label in object.label%}
+                <li>{{ label }}</li>
+                {% endif %}
+            </ul>
         {% else %}
         <em>{% trans 'Not specified' %}</em>
         {% endif %}</td>
