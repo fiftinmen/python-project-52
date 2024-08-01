@@ -16,7 +16,7 @@
         </tr>
         <tr>
         <td>{% trans 'Executor' %}</td>
-        <td>{% if object.executor.exist %}
+        <td>{% if object.executor %}
         {{ object.executor }} 
         {% else %} <em>{% trans 'Not assigned'%}</em>
         {% endif %}</td>
@@ -35,7 +35,7 @@
         </tr>
         <tr>
         <td>{% trans 'Labels' %}</td>
-        <td>{% if object.labels.exist %}
+        <td>{% if object.labels %}
         {{ object.labels }} 
         {% else %}
         <em>{% trans 'Not specified' %}</em>
