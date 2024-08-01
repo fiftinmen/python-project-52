@@ -170,7 +170,7 @@ msgstr "Создать задачу"
 
 #: .\task_manager\tasks\views.py:63
 msgid "Task_update_success"
-msgstr "Задача успешно обновлена"
+msgstr "Задача успешно изменена"
 
 #: .\task_manager\tasks\views.py:65
 msgid "Task_update"
