@@ -33,3 +33,5 @@ jobs:
         with:
           coverageCommand: make test-coverage
           debug: true
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          ROLLBAR_TOKEN: ${{ secrets.ROLLBAR_TOKEN }}
