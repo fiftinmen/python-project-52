@@ -4,7 +4,7 @@ from django.shortcuts import redirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.messages import error
 from django.views.generic.list import ListView
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from task_manager.mixins import LoginRequiredScenarioMixin
 from .models import Label
 

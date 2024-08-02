@@ -1,11 +1,13 @@
 from django.contrib.auth.forms import (
     UserCreationForm,
-    UserChangeForm,
+    #    UserChangeForm,
 )
-from django.core.exceptions import ValidationError
-from django.contrib.auth import get_user_model, password_validation
-from django import forms
-from django.utils.translation import gettext_lazy as _
+
+# from django.core.exceptions import ValidationError
+from django.contrib.auth import get_user_model  # , password_validation
+
+# from django import forms
+# from django.utils.translation import gettext_lazy as _
 
 
 class UsersRegisterForm(UserCreationForm):
@@ -46,7 +48,7 @@ class UsersRegisterForm(UserCreationForm):
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         help_text=_("Enter the same password as before, for verification."),
-    ) 
+    )
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
