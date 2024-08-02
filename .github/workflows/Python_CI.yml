@@ -35,3 +35,6 @@ jobs:
           DEBUG: true
         with:
           coverageCommand: make test-coverage
+          coverage-input-type string: coverage.py
+          format-coverage: true
+          prefix: /home/runner/work/python-project-52/
