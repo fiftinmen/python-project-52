@@ -53,9 +53,9 @@ lint:
 
 .PHONY: test-coverage
 test-coverage:
-	coverage run manage.py test task_manager
-	coverage report
+	poetry run coverage run manage.py test task_manager
+	poetry run coverage report
 
 .PHONY: test-report
 test-report:
-	coverage report
+	poetry run coverage report

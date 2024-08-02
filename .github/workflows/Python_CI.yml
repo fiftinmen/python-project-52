@@ -23,7 +23,7 @@ jobs:
         run: |
           pip install poetry
           make install
-          pip install coverage
+          poetry add coverage
 
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
