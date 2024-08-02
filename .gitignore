@@ -5,3 +5,4 @@ dist
 __pycache__
 task_manager.sqlite3
 temp
+coverage.xml
