@@ -95,10 +95,10 @@ class TestUsersPostCRUDSs(TestCase, _TestUsersUtilsMixin):
         )
         url = reverse_lazy("users_update", args=(user["pk"],))
         response = self.client.post(url, data)
-        with open("file.html", "w", encoding="utf-8") as file:
-            file.write(
-                str(response.serialize().decode("utf-8", errors="ignore"))
-            )
+        # with open("file.html", "w", encoding="utf-8") as file:
+        #    file.write(
+        #        str(response.serialize().decode("utf-8", errors="ignore"))
+        #    )
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse_lazy("users_index"))
         updated_user = CustomUser.objects.get(username=data["username"])

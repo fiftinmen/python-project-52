@@ -38,13 +38,13 @@ class UsersUpdateForm(UserChangeForm):
         "password_mismatch": _("The two password fields didn’t match."),
     }
     password1 = forms.CharField(
-        label=_("New password"),
+        label=_("Password"),
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         strip=False,
         help_text=password_validation.password_validators_help_text_html(),
     )
     password2 = forms.CharField(
-        label=_("New password confirmation"),
+        label=_("Password confirmation"),
         strip=False,
         widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}),
         help_text=_("Enter the same password as before, for verification."),
