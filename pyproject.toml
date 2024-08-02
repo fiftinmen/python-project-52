@@ -22,6 +22,7 @@ django-admin = "^2.0.2"
 django-filter = "^24.2"
 rollbar = "0.16.3"
 django-shell-plus = "^1.1.7"
+coverage = "^7.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"

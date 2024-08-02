@@ -1,13 +1,13 @@
 from django.contrib.auth.forms import (
     UserCreationForm,
-    #    UserChangeForm,
+    UserChangeForm,
 )
 
-# from django.core.exceptions import ValidationError
-from django.contrib.auth import get_user_model  # , password_validation
+from django.core.exceptions import ValidationError
+from django.contrib.auth import get_user_model, password_validation
 
-# from django import forms
-# from django.utils.translation import gettext_lazy as _
+from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class UsersRegisterForm(UserCreationForm):
@@ -23,7 +23,7 @@ class UsersRegisterForm(UserCreationForm):
         ]
 
 
-""" class UsersUpdateForm(UserChangeForm):
+class UsersUpdateForm(UserChangeForm):
     password = None
 
     class Meta:
@@ -75,4 +75,3 @@ class UsersRegisterForm(UserCreationForm):
         if commit:
             self.instance.save()
         return self.instance
-"""

@@ -215,7 +215,7 @@ class TestTasksFilters(TestCase, _TestUtilsMixin):
         self.assertEqual(response.status_code, 200)
         self.assertContains(
             response,
-            f"{executor.username}",
+            f"{executor}",
         )
         self.assertTrue(
             response,
