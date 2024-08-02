@@ -35,4 +35,3 @@ jobs:
           DEBUG: true
         with:
           coverageCommand: make test-coverage
-          debug: true
