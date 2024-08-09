@@ -1,7 +1,16 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "Simple task manager for multiple users. Provides tags and statuses for tasks"
+classifiers = [
+    "Development Status :: 2 - Pre-AlphaClose",
+    "Framework :: Django :: 5.1",
+    "Programming Language :: Python :: 3.11",
+    "Natural Language :: Russian",
+    "Private :: Do Not Upload",
+    "Topic :: Office/Business :: Scheduling",
+    "Topic :: Office/Business :: Groupware"
+]
 authors = ["fiftinmen <fiftin.men@gmail.com>"]
 readme = "README.md"
 packages = [
@@ -22,7 +31,6 @@ django-admin = "^2.0.2"
 django-filter = "^24.2"
 rollbar = "0.16.3"
 django-shell-plus = "^1.1.7"
-coverage = "^7.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"
@@ -30,6 +38,7 @@ flake8 = "^7.1.0"
 django-admin = "^2.0.2"
 pytest-django = "^4.5.2"
 ipython = "^8.5.0"
+coverage = "^7.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
