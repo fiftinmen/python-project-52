@@ -5,6 +5,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
+    <h1 class="my-4">{% trans 'Task_update' %}</h1>
 <div class="container">
     <form action="{% url "tasks_update" pk=object.pk %}" method="post">
         {% csrf_token %}

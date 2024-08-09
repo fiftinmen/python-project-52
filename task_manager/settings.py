@@ -34,7 +34,7 @@ load_dotenv()
 SECRET_KEY = os.environ["SECRET_KEY"]
 DATABASE_URL = os.environ.get("DATABASE_URL")
 ROLLBAR_TOKEN = os.environ.get("ROLLBAR_TOKEN")
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG", False)
 # SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = [
@@ -75,15 +75,18 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "rollbar.contrib.django.middleware.RollbarNotifierMiddleware",
 ]
 
-ROLLBAR = {
-    "access_token": ROLLBAR_TOKEN,
-    "environment": "development" if DEBUG else "production",
-    "code_version": "1.0",
-    "root": BASE_DIR,
-}
+if ROLLBAR_TOKEN is not None:
+    MIDDLEWARE.append(
+        "rollbar.contrib.django.middleware.RollbarNotifierMiddleware"
+    )
+    ROLLBAR = {
+        "access_token": ROLLBAR_TOKEN,
+        "environment": "development" if DEBUG else "production",
+        "code_version": "1.0",
+        "root": BASE_DIR,
+    }
 
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STORAGES = {
@@ -166,7 +169,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LOCALE_PATHS = [
-    "locale",
+    "task_manager/locale",
 ]
 
 LANGUAGES = [

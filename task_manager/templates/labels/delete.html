@@ -4,6 +4,7 @@
 {% load static %}
 {% get_current_language as LANGUAGE_CODE %}
 {% block content %}
+    <h1 class="my-4">{% trans 'Label_delete' %}</h1>
 <div class="container">
     <form action="{% url "labels_delete" pk=object.pk %}" method="post">
         {% csrf_token %}

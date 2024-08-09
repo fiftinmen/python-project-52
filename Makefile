@@ -1,5 +1,5 @@
 .PHONY: start build dev test setup install db-clean make-n-migrate makemigrations migrate \
-		shell lint test-coverage test-report
+		shell lint test-coverage test-report makemessages compilemessages
 
 MANAGE := poetry run python manage.py
 
@@ -16,31 +16,31 @@ dev:
 	poetry run python manage.py runserver
 
 test:
-	@poetry run python manage.py test
+	poetry run python manage.py test
 
 setup: db-clean install migrate
 
 install:
-	@poetry install
+	poetry install
 
 db-clean:
-	@rm db.sqlite3 || true
+	rm db.sqlite3 || true
 
  make-n-migrate:
-	@$(MANAGE) makemigrations
-	@$(MANAGE) migrate
+	$(MANAGE) makemigrations
+	$(MANAGE) migrate
 
  makemigrations:
-	@$(MANAGE) makemigrations
+	$(MANAGE) makemigrations
 
 migrate:
-	@$(MANAGE) migrate
+	$(MANAGE) migrate
 
 shell:
-	@$(MANAGE) shell_plus --ipython
+	$(MANAGE) shell_plus --ipython
 
 lint:
-	@poetry run flake8 task_manager
+	poetry run flake8 task_manager
 
 test-coverage:
 	poetry run coverage run manage.py test task_manager
@@ -48,3 +48,9 @@ test-coverage:
 
 test-report:
 	poetry run coverage report
+
+makemessages:
+	$(MANAGE) makemessages --all
+
+compilemessages:
+	$(MANAGE) compilemessages

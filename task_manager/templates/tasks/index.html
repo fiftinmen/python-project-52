@@ -5,6 +5,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 {% block content %}
+    <h1 class="my-4">{% trans 'Tasks' %}</h1>
 <a class="btn btn-primary mb-3" href="{% url 'tasks_create'%}"">
     {% trans "Create_task" %}
 </a>
