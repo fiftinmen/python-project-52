@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy
 from django.test import TestCase, Client
 from .models import Status
-from .fixtures.fixtures import (
-    urls_data,
+from task_manager.fixtures.fixtures import (
+    statuses_urls_data,
     valid_statuses,
     new_valid_statuses,
     invalid_statuses,
@@ -39,14 +39,14 @@ class TestsStatuses(TestCase, _TestStatusesUtilsMixin):
         self.subject = "Statuses app"
         self.client = Client()
         self._tests_to_success_tuple = (
-            ("_test_statuses_get_success", urls_data),
+            ("_test_statuses_get_success", statuses_urls_data),
             ("_test_statuses_create_post_success", valid_statuses),
             ("_test_statuses_update_post_success", new_valid_statuses),
             ("_test_statuses_delete_post_success", new_valid_statuses),
         )
         self._tests_to_fail_tuple = (
-            ("_test_statuses_get_fail", urls_data),
-            ("_test_statuses_post_no_auth_fail", urls_data),
+            ("_test_statuses_get_fail", statuses_urls_data),
+            ("_test_statuses_post_no_auth_fail", statuses_urls_data),
             ("_test_statuses_create_post_fail", invalid_statuses),
             ("_test_statuses_update_post_fail", invalid_statuses),
             (

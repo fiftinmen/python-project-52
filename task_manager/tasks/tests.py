@@ -5,8 +5,8 @@ from .models import Task
 from task_manager.statuses.models import Status
 from task_manager.users.models import CustomUser
 
-from .fixtures.fixtures import (
-    urls_data,
+from task_manager.fixtures.fixtures import (
+    tasks_urls_data,
     valid_tasks,
     new_valid_tasks,
     invalid_tasks,
@@ -50,14 +50,14 @@ class TestsTasks(
         self.subject = "tasks app"
         self.client = Client()
         self._tests_to_success_tuple = (
-            ("_test_tasks_get_success", urls_data),
+            ("_test_tasks_get_success", tasks_urls_data),
             ("_test_tasks_create_post_success", valid_tasks),
             ("_test_tasks_update_post_success", new_valid_tasks),
             ("_test_tasks_delete_post_success", new_valid_tasks),
         )
         self._tests_to_fail_tuple = (
-            ("_test_tasks_get_fail", urls_data),
-            ("_test_tasks_post_no_auth_fail", urls_data),
+            ("_test_tasks_get_fail", tasks_urls_data),
+            ("_test_tasks_post_no_auth_fail", tasks_urls_data),
             ("_test_tasks_create_post_fail", invalid_tasks),
             ("_test_tasks_update_post_fail", invalid_tasks),
             ("_test_tasks_delete_not_own_task_post_fail", valid_tasks),
@@ -171,7 +171,7 @@ class TestsTasks(
 
 
 class TestTasksFilters(TestCase, _TestUtilsMixin):
-    fixtures = ("fixtures.json",)
+    fixtures = ("db_fixtures.json",)
 
     def setUp(self):
         self.users = CustomUser.objects.all()

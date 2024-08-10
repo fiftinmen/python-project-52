@@ -1,8 +1,8 @@
 from django.urls import reverse_lazy
 from django.test import TestCase, Client
 from .models import Label
-from .fixtures.fixtures import (
-    urls_data,
+from task_manager.fixtures.fixtures import (
+    labels_urls_data,
     valid_labels,
     new_valid_labels,
     invalid_labels,
@@ -39,14 +39,14 @@ class TestsLabels(TestCase, _TestLabelsUtilsMixin):
         self.subject = "Labels app"
         self.client = Client()
         self._tests_to_success_tuple = (
-            ("_test_labels_get_success", urls_data),
+            ("_test_labels_get_success", labels_urls_data),
             ("_test_labels_create_post_success", valid_labels),
             ("_test_labels_update_post_success", new_valid_labels),
             ("_test_labels_delete_post_success", new_valid_labels),
         )
         self._tests_to_fail_tuple = (
-            ("_test_labels_get_fail", urls_data),
-            ("_test_labels_post_no_auth_fail", urls_data),
+            ("_test_labels_get_fail", labels_urls_data),
+            ("_test_labels_post_no_auth_fail", labels_urls_data),
             ("_test_labels_create_post_fail", invalid_labels),
             ("_test_labels_update_post_fail", invalid_labels),
             (

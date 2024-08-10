@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.test import TestCase, Client
 from .models import CustomUser
-from .fixtures.fixtures import (
+from task_manager.fixtures.fixtures import (
     valid_users,
     invalid_users,
     extended_valid_users,
